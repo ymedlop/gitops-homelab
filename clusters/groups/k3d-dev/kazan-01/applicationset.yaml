@@ -20,6 +20,8 @@ spec:
               revision: main
               directories:
               - path: clusters/addons/*
+              - path: clusters/addons/argocd*
+                exclude: true
       - merge:
           mergeKeys:
             - path
