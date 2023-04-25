@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 - ../../../addons/argocd
 - ../../../addons/argo-rollouts
+- applicationset.yaml

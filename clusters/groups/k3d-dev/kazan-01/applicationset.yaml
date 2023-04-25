@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster-apps
+  name: kazan01-apps
   namespace: argocd
 spec:
   generators:
@@ -39,7 +39,7 @@ spec:
               - path: clusters/groups/k3d-dev/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: 'kazan01-{{path.basename}}'
     spec:
       project: default
       source:

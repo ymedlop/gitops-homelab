@@ -4,7 +4,6 @@ namespace: argocd
 
 resources:
 - argocd-ns.yaml
-- applicationset.yaml
 - extensions/argo-rollouts.yaml
 
 helmGlobals:
