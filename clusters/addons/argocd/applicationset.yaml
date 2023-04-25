@@ -17,6 +17,7 @@ spec:
           # produces argocd app per directory in clusters/base
           - git:
               repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
+              revision: main
               directories:
               - path: clusters/addons/*
       - merge:
@@ -25,11 +26,11 @@ spec:
           generators:
           # adds env metadata from .env.yaml to each application
           # workaround for https://github.com/argoproj/argo-cd/issues/13118 - should use env directory name instead
-          # - git:
-          #     repoURL: *repo
-          #     revision: HEAD
-          #     files:
-          #     - path: clusters/groups/*/.env.yaml
+          - git:
+              repoURL: *repo
+              revision: HEAD
+              files:
+              - path: clusters/groups/k3d-dev/.env.yaml
           # discovers environment specific applications overrides
           - git:
               repoURL: *repo
@@ -38,7 +39,7 @@ spec:
               - path: clusters/groups/k3d-dev/*
   template:
     metadata:
-      name: '{{server}}-{{path.basename}}'
+      name: '{{path.basename}}'
     spec:
       project: default
       source:

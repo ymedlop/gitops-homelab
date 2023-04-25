@@ -5,6 +5,7 @@ namespace: argocd
 resources:
 - argocd-ns.yaml
 - applicationset.yaml
+- extensions/argo-rollouts.yaml
 
 helmGlobals:
   chartHome: ../../charts
@@ -15,6 +16,7 @@ helmCharts:
   repo: https://argoproj.github.io/argo-helm
   version: 5.29.1
   valuesFile: values.yaml
+  releaseName: argocd
 
 patches:
 - path: argocd-cm.yaml
