@@ -1,0 +1,1 @@
+kubectl kustomize clusters\groups\k3d-dev\kazan-01 --enable-helm | kubectl apply -f -
