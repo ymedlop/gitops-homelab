@@ -12,7 +12,7 @@ helmCharts:
   version: 5.51.4
   valuesFile: ../../../../../base/argocd/values.yaml
   releaseName: argocd
-  valuesMerge: override # merge, override, replace
+  valuesMerge: merge # merge, override, replace
   valuesInline:
     redis-ha:
       enabled: true
