@@ -14,7 +14,7 @@ helmCharts:
   version: 2.32.4
   valuesFile: ../../../../../base/argo-rollouts/values.yaml
   releaseName: argo-rollouts
-  valuesMerge: override # merge, override, replace
+  valuesMerge: merge
   valuesInline:
     dashboard:
       enabled: true
