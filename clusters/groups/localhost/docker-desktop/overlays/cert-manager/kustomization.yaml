@@ -11,6 +11,7 @@ helmGlobals:
 helmCharts:
   # https://artifacthub.io/packages/helm/cert-manager/cert-manager
 - name: cert-manager
+  includeCRDs: true
   repo: https://charts.jetstack.io/
   version: 1.11.0
   valuesFile: ../../../../../base/cert-manager/values.yaml
