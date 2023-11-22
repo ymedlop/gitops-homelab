@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../../../base/argo-rollouts
+
+
+helmCharts:
+# https://artifacthub.io/packages/helm/argo/argo-rollouts
+- name: argo-rollouts
+  repo: https://argoproj.github.io/argo-helm
+  version: 2.32.4
+  valuesFile: ../../../../base/argo-rollouts/values.yaml
+  releaseName: argo-rollouts
+  valuesMerge: override # merge, override, replace
+  valuesInline:
+    dashboard:
+      enabled: true

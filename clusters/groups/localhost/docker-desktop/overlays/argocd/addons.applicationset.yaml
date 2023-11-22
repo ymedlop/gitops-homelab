@@ -1,8 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: kazan01-apps
-  namespace: argocd
+  name: docker-desktop-addons
 spec:
   generators:
   - merge:
@@ -17,10 +16,9 @@ spec:
           # produces argocd app per directory in clusters/base
           - git:
               repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
-              revision: main
               directories:
-              - path: clusters/addons/*
-              - path: clusters/addons/argocd*
+              - path: clusters/base/*
+              - path: clusters/base/argocd
                 exclude: true
       - merge:
           mergeKeys:
@@ -32,27 +30,27 @@ spec:
               repoURL: *repo
               revision: HEAD
               files:
-              - path: clusters/groups/k3d-dev/.env.yaml
+              - path: clusters/groups/docker-desktop/.env.yaml
           # discovers environment specific applications overrides
           - git:
               repoURL: *repo
               revision: HEAD
               directories:
-              - path: clusters/groups/k3d-dev/*
+              - path: clusters/groups/docker-desktop/overlays/*
+              - path: clusters/groups/docker-desktop/overlays/argocd
+                exclude: true
   template:
     metadata:
-      name: 'kazan01-{{path.basename}}'
+      name: 'docker-desktop{{path.basename}}'
     spec:
-      project: default
+      project: system
       source:
         repoURL: *repo
         path: '{{path}}'
       destination:
         server: '{{server}}'
-        namespace: '{{path.basename}}'
+        # namespace: '{{path.basename}}'
+        namespace: argocd
       syncPolicy:
         automated:
           prune: true
-          selfHeal: true
-        syncOptions:
-        - CreateNamespace=true
