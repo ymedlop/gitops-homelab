@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  annotations:
+    managed-by: argocd.argoproj.io
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  name: argocd-repo
+  namespace: argocd
+type: Opaque
+stringData:
+  project: addons
+  type: git
+  url: https://github.com/ymedlop/argocd-clusters-management.git

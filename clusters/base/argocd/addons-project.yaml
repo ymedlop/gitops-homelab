@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: addons
+spec:
+  destinations:
+    - name: in-cluster
+      namespace: "*"
+  sourceRepos:
+    - https://github.com/ymedlop/argocd-clusters-management.git
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
