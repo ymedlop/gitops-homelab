@@ -17,4 +17,4 @@ helmCharts:
   valuesMerge: merge
   valuesInline:
     dashboard:
-      enabled: true
+      enabled: false
