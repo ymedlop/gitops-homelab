@@ -44,7 +44,7 @@ spec:
     metadata:
       name: 'docker-desktop{{path.basename}}'
     spec:
-      project: system
+      project: addons
       source:
         repoURL: *repo
         path: '{{path}}'
