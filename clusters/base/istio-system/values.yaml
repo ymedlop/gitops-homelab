@@ -1,0 +1,4 @@
+kiali-server:
+  fullnameOverride: kiali-server
+  auth:
+    strategy: "anonymous"
