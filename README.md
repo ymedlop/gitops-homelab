@@ -1,4 +1,9 @@
-# argocd-clusters-management
+# Argo CD Cluster Management Repo
+
+The repository contains an opinionated directory structure that enables Kubernetes administrators to efficiently use of Argo CD to bootstrap and manage fleet of Kubernetes clusters.
+
+We based our repo on https://github.com/alexmt/argocd-core-cluster-management
+
 
 Get Initial Password
 ```
