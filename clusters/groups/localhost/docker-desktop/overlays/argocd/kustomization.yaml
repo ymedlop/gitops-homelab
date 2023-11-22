@@ -16,23 +16,8 @@ helmCharts:
   version: 5.51.4
   valuesFile: ../../../../../base/argocd/values.yaml
   releaseName: argocd
-  valuesMerge: replace
+  valuesMerge: merge
   valuesInline:
-    redis-ha:
-      enabled: true
-
-    controller:
-      replicas: 1
-
     server:
-      autoscaling:
-        enabled: true
-        minReplicas: 2
-
-    repoServer:
-      autoscaling:
-        enabled: true
-        minReplicas: 2
- 
-    applicationSet:
-      replicas: 2
+      extraArgs:
+      - --insecure
