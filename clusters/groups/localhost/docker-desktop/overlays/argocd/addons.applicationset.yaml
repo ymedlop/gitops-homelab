@@ -7,7 +7,7 @@ spec:
   generators:
   - git:
       repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
-      revision: main
+      revision: &branch main
       directories:
       - path: clusters/groups/localhost/docker-desktop/overlays/*
       - path: clusters/groups/localhost/docker-desktop/overlays/argocd
@@ -19,10 +19,14 @@ spec:
       project: addons
       source:
         repoURL: *repo
+        targetRevision: *branch
         path: '{{path}}'
       destination:
         name: in-cluster
-        namespace: argocd
+        namespace: "{{path.basename}}"
       syncPolicy:
         automated:
           prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
