@@ -5,13 +5,13 @@ namespace: argo-rollouts
 resources:
 - argo-rollouts-ns.yaml
 
-helmGlobals:
-  chartHome: ../../charts
+# helmGlobals:
+#   chartHome: ../../charts
 
-helmCharts:
-# https://artifacthub.io/packages/helm/argo/argo-rollouts
-- name: argo-rollouts
-  repo: https://argoproj.github.io/argo-helm
-  version: 2.26.0
-  valuesFile: values.yaml
-  releaseName: argo-rollouts
+# helmCharts:
+# # https://artifacthub.io/packages/helm/argo/argo-rollouts
+# - name: argo-rollouts
+#   repo: https://argoproj.github.io/argo-helm
+#   version: 2.26.0
+#   valuesFile: values.yaml
+#   releaseName: argo-rollouts

@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
 - ../../../../../base/argo-rollouts
 
+helmGlobals:
+ chartHome: ../../../../../charts
 
 helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-rollouts

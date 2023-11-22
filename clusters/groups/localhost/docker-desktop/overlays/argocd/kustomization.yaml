@@ -1,9 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: argocd
 
 resources:
 - ../../../../../base/argocd
 - addons.applicationset.yaml
+
+helmGlobals:
+ chartHome: ../../../../../charts
 
 helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-cd
@@ -12,7 +16,7 @@ helmCharts:
   version: 5.51.4
   valuesFile: ../../../../../base/argocd/values.yaml
   releaseName: argocd
-  valuesMerge: merge # merge, override, replace
+  valuesMerge: merge
   valuesInline:
     redis-ha:
       enabled: true
@@ -29,6 +33,6 @@ helmCharts:
       autoscaling:
         enabled: true
         minReplicas: 2
-
+ 
     applicationSet:
       replicas: 2

@@ -5,13 +5,13 @@ namespace: argocd
 resources:
 - argocd-ns.yaml
 
-helmGlobals:
-  chartHome: ../../charts
+# helmGlobals:
+#   chartHome: ../../charts
 
-helmCharts:
-# https://artifacthub.io/packages/helm/argo/argo-cd
-- name: argo-cd
-  repo: https://argoproj.github.io/argo-helm
-  version: 5.29.1
-  valuesFile: values.yaml
-  releaseName: argocd
+# helmCharts:
+# # https://artifacthub.io/packages/helm/argo/argo-cd
+# - name: argo-cd
+#   repo: https://argoproj.github.io/argo-helm
+#   version: 5.29.1
+#   valuesFile: values.yaml
+#   releaseName: argocd
