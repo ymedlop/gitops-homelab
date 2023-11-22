@@ -8,6 +8,7 @@ helmGlobals:
 helmCharts:
 # https://istio.io/latest/docs/setup/install/helm/
 - name: base
+  includeCRDs: true
   repo: https://istio-release.storage.googleapis.com/charts/
   version: 1.17.1
   valuesFile: ../../../../../base/istio-system/values.yaml
