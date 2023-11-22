@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 - ../../../../../base/argocd
-- base.applicationset.yaml
+- addons.applicationset.yaml
 
 helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-cd
