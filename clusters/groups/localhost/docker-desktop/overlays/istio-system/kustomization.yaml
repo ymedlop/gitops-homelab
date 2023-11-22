@@ -19,7 +19,7 @@ helmCharts:
   releaseName: istiod
 - name: kiali-server 
   repo: https://kiali.org/helm-charts
-  version: 1.17.1
+  version: 1.65.0
   valuesFile: ../../../../../base/istio-system/values.yaml
   releaseName: kiali-server 
 # https://artifacthub.io/packages/helm/prometheus-community/prometheus
