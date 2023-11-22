@@ -54,6 +54,10 @@ Let's take a look at the directory structure:
 
 ```
 clusters/groups
-├── localhost
+└── localhost
     └── docker-desktop
+        └── overlays
+            ├── argo-rollouts
+            ├── argocd
+            └── argocd-extensions
 ```
