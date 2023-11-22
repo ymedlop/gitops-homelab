@@ -15,15 +15,18 @@ helmCharts:
   repo: https://istio-release.storage.googleapis.com/charts/
   version: 1.17.1
   valuesFile: ../../../../../base/istio-system/values.yaml
+  releaseName: istiod
 - name: kiali-server 
   repo: https://kiali.org/helm-charts
   version: 1.65.0
-  valuesFile: ../../../../../base/istio-system/values.yaml 
+  valuesFile: ../../../../../base/istio-system/values.yaml
+  releaseName: kiali-server 
 # https://artifacthub.io/packages/helm/prometheus-community/prometheus
 - name: prometheus 
   repo: https://prometheus-community.github.io/helm-charts
   version: 20.0.2
   valuesFile: ../../../../../base/istio-system/values.yaml
+  releaseName: prometheus
   valuesMerge: merge
   valuesInline:
     fullnameOverride: prometheus
@@ -37,3 +40,6 @@ helmCharts:
       fullnameOverride: prometheus
       service:
         servicePort: 9090
+
+resources:
+- ../../../../../base/istio-system

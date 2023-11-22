@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: kiali-virtualservice
+spec:
+  gateways:
+    - global-gateway
+  hosts:
+    - "kiali.docker.internal"
+  http:
+    - route:
+      - destination:
+          host: kiali-server
+          port:
+            number: 20001
