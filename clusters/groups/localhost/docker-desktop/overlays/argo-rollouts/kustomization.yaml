@@ -5,10 +5,17 @@ namespace: argocd-rollouts
 helmGlobals:
  chartHome: ../../../../../charts
 
+helmCharts:
+# https://artifacthub.io/packages/helm/argo/argo-rollouts
+- name: argo-rollouts
+  repo: https://argoproj.github.io/argo-helm
+  version: 2.32.4
+  valuesFile: ../../../../../base/argo-rollouts/values.yaml
+  releaseName: argo-rollouts
+  valuesMerge: merge
+  valuesInline:
+    dashboard:
+      enabled: true
+
 resources:
 - ../../../../../base/argo-rollouts
-
-helmCharts:
-- name: argo-rollouts
-  version: 2.23.0
-  repo: https://argoproj.github.io/argo-helm/
