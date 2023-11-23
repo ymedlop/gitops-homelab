@@ -8,7 +8,7 @@ helmGlobals:
 resources:
 - ../../../../../base/argo-rollouts
 
-helm:
-- name: mydependency
+helmCharts:
+- name: argo-rollouts
   version: 2.23.0
-  repository: https://argoproj.github.io/argo-helm/
+  repo: https://argoproj.github.io/argo-helm/
