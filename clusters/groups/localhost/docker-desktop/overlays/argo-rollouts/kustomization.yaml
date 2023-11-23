@@ -8,5 +8,7 @@ helmGlobals:
 resources:
 - ../../../../../base/argo-rollouts
 
-patchesStrategicMerge:
-- helm
+helm:
+- name: mydependency
+  version: 2.23.0
+  repository: https://argoproj.github.io/argo-helm/
