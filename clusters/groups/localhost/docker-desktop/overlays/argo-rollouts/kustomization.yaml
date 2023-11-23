@@ -10,4 +10,4 @@ resources:
 
 patchesStrategicMerge:
 - helm/Chart.yaml
-- helm/values.yaml
+# - helm/values.yaml
