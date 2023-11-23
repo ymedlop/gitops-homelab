@@ -9,5 +9,4 @@ resources:
 - ../../../../../base/argo-rollouts
 
 patchesStrategicMerge:
-- helm/Chart.yaml
-# - helm/values.yaml
+- helm
