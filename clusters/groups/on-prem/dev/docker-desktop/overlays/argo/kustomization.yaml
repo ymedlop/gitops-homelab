@@ -17,10 +17,9 @@ helmCharts:
   version: 5.52.1
   valuesFile: ../../../../../../base/argo/values.yaml
   releaseName: argo
+  includeCRDs: true
   valuesMerge: merge
   valuesInline:
-    crds:
-      install: true
     server:
       extraArgs:
       - --insecure
