@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: docker-desktop-addons
-  namespace: argocd
+  namespace: argo
 spec:
   generators:
   - git:
@@ -10,7 +10,9 @@ spec:
       revision: &branch main
       directories:
       - path: clusters/groups/localhost/docker-desktop/overlays/*
-      - path: clusters/groups/localhost/docker-desktop/overlays/argocd
+      - path: clusters/groups/localhost/docker-desktop/overlays/argo
+        exclude: true
+      - path: clusters/groups/localhost/docker-desktop/overlays/argo-woorkflows
         exclude: true
   template:
     metadata:

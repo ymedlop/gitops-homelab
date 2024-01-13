@@ -16,6 +16,3 @@ helmCharts:
   valuesInline:
     dashboard:
       enabled: true
-
-resources:
-- ../../../../../base/argo-rollouts
