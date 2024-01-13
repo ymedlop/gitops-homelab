@@ -15,7 +15,7 @@ helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-cd
 - name: argo-cd
   repo: https://argoproj.github.io/argo-helm
-  version: 5.51.4
+  version: 5.52.1
   valuesFile: ../../../../../../base/argo/values.yaml
   releaseName: argo
   valuesMerge: merge
@@ -26,6 +26,6 @@ helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-workflows
 - name: argo-workflows
   repo: https://argoproj.github.io/argo-helm
-  version: 3.5.3
+  version: 0.40.5
   valuesFile: ../../../../../../base/argo-workflows/values.yaml
   releaseName: argo-workflows
