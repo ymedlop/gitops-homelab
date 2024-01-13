@@ -6,4 +6,5 @@ workflow:
     create: true
 controller:
   workflowNamespaces:
+    - default
     - argo-workflows

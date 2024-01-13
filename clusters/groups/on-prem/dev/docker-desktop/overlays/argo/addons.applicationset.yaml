@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: addons
+  namespace: argo
 spec:
   generators:
   - matrix:
@@ -16,8 +17,6 @@ spec:
           directories:
           - path: clusters/groups/on-prem/dev/*/overlays/*
           - path: clusters/groups/on-prem/dev/*/overlays/argo
-            exclude: true
-          - path: clusters/groups/on-prem/dev/*/overlays/argo-workflows
             exclude: true
   template:
     metadata:
