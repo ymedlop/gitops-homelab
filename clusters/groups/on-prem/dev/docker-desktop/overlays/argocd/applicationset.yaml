@@ -7,10 +7,7 @@ spec:
   generators:
   - matrix:
       generators:
-      - clusters:
-          selector:
-            matchLabels:
-              argocd.argoproj.io/secret-type: cluster
+      - clusters: {}
       - git:
           repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
           revision: &branch main
@@ -20,7 +17,7 @@ spec:
             exclude: true
   template:
     metadata:
-      name: '{{name}-{{path.basename}}'
+      name: '{{name}}-{{path.basename}}'
     spec:
       project: addons
       source:
@@ -28,7 +25,7 @@ spec:
         targetRevision: *branch
         path: '{{path}}'
       destination:
-        name: '{{name}'
+        name: '{{name}}'
         namespace: '{{path.basename}}'
       syncPolicy:
         automated:
