@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ArgoCDExtension
 metadata:
   name: argo-rollouts
+  namespace: argocd
   finalizers:
     - extensions-finalizer.argocd.argoproj.io
 spec:
