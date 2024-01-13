@@ -18,7 +18,7 @@ spec:
           - path: clusters/groups/on-prem/dev/*/overlays/*
           - path: clusters/groups/on-prem/dev/*/overlays/argo
             exclude: true
-          - path: clusters/groups/on-prem/dev/*/overlays/argo-woorkflows
+          - path: clusters/groups/on-prem/dev/*/overlays/argo-workflows
             exclude: true
   template:
     metadata:
