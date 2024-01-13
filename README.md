@@ -12,7 +12,6 @@ We've identified the following main use cases for cluster administrators:
 
 * **Cluster Addons** - set of applications that have to be installed on every cluster.
 * **Cluster Groups** - ability to split the clusters fleet into multiple groups and customize each group independently.
-* **Snowflake Clusters** - ability to customize the applications configuration on a per-cluster basis.
 
 ## Prerequisites
 
@@ -53,9 +52,10 @@ Let's take a look at the directory structure:
 
 ```
 clusters/groups
-└── localhost
-    └── docker-desktop
-        └── overlays
-            ├── argo-rollouts
-            └── argo
+└── <cloud-provider>
+    └── <environment>
+        └── <cluster>
+            └── overlays
+                ├── argo-rollouts
+                └── argo
 ```

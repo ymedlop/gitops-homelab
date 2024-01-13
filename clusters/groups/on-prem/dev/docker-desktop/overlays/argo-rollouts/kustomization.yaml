@@ -10,7 +10,7 @@ helmCharts:
 - name: argo-rollouts
   repo: https://argoproj.github.io/argo-helm
   version: 2.32.4
-  valuesFile: ../../../../../base/argo-rollouts/values.yaml
+  valuesFile: ../../../../../../base/argo-rollouts/values.yaml
   releaseName: argo-rollouts
   valuesMerge: merge
   valuesInline:

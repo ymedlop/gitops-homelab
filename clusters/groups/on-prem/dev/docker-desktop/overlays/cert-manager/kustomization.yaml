@@ -11,8 +11,8 @@ helmCharts:
   includeCRDs: true
   repo: https://charts.jetstack.io/
   version: 1.11.0
-  valuesFile: ../../../../../base/cert-manager/values.yaml
+  valuesFile: ../../../../../../base/cert-manager/values.yaml
   releaseName: cert-manager
 
 resources:
-- ../../../../../base/cert-manager
+- ../../../../../../base/cert-manager

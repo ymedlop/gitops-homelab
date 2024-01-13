@@ -10,5 +10,5 @@ helmCharts:
 - name: kiali-operator 
   repo: https://kiali.org/helm-charts
   version:  1.65.0
-  valuesFile: ../../../../../base/kiali-operator/values.yaml
+  valuesFile: ../../../../../../base/kiali-operator/values.yaml
   releaseName: kiali-operator 
