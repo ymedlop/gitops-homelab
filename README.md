@@ -37,14 +37,13 @@ Time to check our deployment repository. As you can expect it contains deploymen
 
 ```
 clusters/base
-├── argocd
-├── argocd-rollouts
-└── argocd-extensions
+├── argo
+└── argo-rollouts
 ```
 
 Each directory represents a single application. The typical recommendation to application developers is to leverage Argo CD and manually create Argo CD Application CR per directory.
 This is perfectly fine if you need to manage a few applications but cluster administrators have to take care of dozens if not hundreds! Creating Argo CD applications manually is not an option.
-Instead, we can GitOps Argo CD configuration and let it manage itself. As you could've noticed, one of the directories is called `argocd`. This directory contains Argo CD installation manifests.
+Instead, we can GitOps Argo CD configuration and let it manage itself. As you could've noticed, one of the directories is called `argo`. This directory contains Argo CD installation manifests.
 
 ### Cluster Groups
 
@@ -58,6 +57,5 @@ clusters/groups
     └── docker-desktop
         └── overlays
             ├── argo-rollouts
-            ├── argocd
-            └── argocd-extensions
+            └── argo
 ```

@@ -5,6 +5,7 @@ namespace: argocd
 resources:
 - ../../../../../base/argo
 - ../../../../../base/argocd-workflows
+- extensions
 - addons.applicationset.yaml
 
 helmGlobals:
