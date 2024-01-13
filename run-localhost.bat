@@ -1,6 +1,5 @@
 ECHO TODO: https://github.com/kubernetes-sigs/kustomize/issues/3502
 kubectl kustomize clusters\groups\on-prem\dev\docker-desktop --enable-helm --load-restrictor LoadRestrictionsNone | kubectl apply -f -
-kubectl kustomize clusters\groups\on-prem\dev\docker-desktop --enable-helm --load-restrictor LoadRestrictionsNone | kubectl apply -f -
 
 kubectl -n argo get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
 
