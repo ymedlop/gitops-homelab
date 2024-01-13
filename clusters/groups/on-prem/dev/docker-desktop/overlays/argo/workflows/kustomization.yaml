@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: argo
+
+resources:
+- ns.yaml
+
+helmGlobals:
+ chartHome: ../../../../../charts
+
+helmCharts:
+# https://artifacthub.io/packages/helm/argo/argo-workflows
+- name: argo-workflows
+  repo: https://argoproj.github.io/argo-helm
+  version: 0.40.5
+  valuesFile: values.yaml
+  releaseName: argo-workflows

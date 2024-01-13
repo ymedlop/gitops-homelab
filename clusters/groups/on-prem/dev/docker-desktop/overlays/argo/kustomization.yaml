@@ -4,8 +4,9 @@ namespace: argo
 
 resources:
 - ../../../../../../base/argo
-- ../../../../../../base/argo-workflows
+# - ../../../../../../base/argo-workflows
 - extensions
+- workflows
 - addons.applicationset.yaml
 
 helmGlobals:
@@ -24,9 +25,3 @@ helmCharts:
     server:
       extraArgs:
       - --insecure
-# https://artifacthub.io/packages/helm/argo/argo-workflows
-- name: argo-workflows
-  repo: https://argoproj.github.io/argo-helm
-  version: 0.40.5
-  valuesFile: ../../../../../../base/argo-workflows/values.yaml
-  releaseName: argo-workflows
