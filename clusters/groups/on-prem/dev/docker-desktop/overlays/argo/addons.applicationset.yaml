@@ -1,22 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: docker-desktop-addons
+  name: addons
   namespace: argo
 spec:
   generators:
-  - git:
-      repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
-      revision: &branch main
-      directories:
-      - path: clusters/groups/localhost/docker-desktop/overlays/*
-      - path: clusters/groups/localhost/docker-desktop/overlays/argo
-        exclude: true
-      - path: clusters/groups/localhost/docker-desktop/overlays/argo-woorkflows
-        exclude: true
+  - matrix:
+      generators:
+      - clusters:
+          selector:
+            matchLabels:
+              argocd.argoproj.io/secret-type: cluster
+      - git:
+          repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
+          revision: &branch main
+          directories:
+          - path: clusters/groups/on-prem/dev/*/overlays/*
+          - path: clusters/groups/on-prem/dev/*/overlays/argo
+            exclude: true
+          - path: clusters/groups/on-prem/dev/*/overlays/argo-woorkflows
+            exclude: true
   template:
     metadata:
-      name: 'docker-desktop-{{path.basename}}'
+      name: '{{name}-{{path.basename}}'
     spec:
       project: addons
       source:
@@ -24,8 +30,8 @@ spec:
         targetRevision: *branch
         path: '{{path}}'
       destination:
-        name: in-cluster
-        namespace: "{{path.basename}}"
+        name: '{{name}'
+        namespace: '{{path.basename}}'
       syncPolicy:
         automated:
           prune: true
