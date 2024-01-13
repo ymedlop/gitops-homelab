@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: kiali-operator
 
 helmGlobals:
- chartHome: ../../../../../charts
+ chartHome: ../../../../../../charts
 
 helmCharts:
 # https://kiali.io/docs/installation/installation-guide/install-with-helm/

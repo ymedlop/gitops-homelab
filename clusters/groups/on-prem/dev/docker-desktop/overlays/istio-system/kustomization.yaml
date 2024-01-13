@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: istio-system
 
 helmGlobals:
- chartHome: ../../../../../charts
+ chartHome: ../../../../../../charts
 
 helmCharts:
 # https://istio.io/latest/docs/setup/install/helm/

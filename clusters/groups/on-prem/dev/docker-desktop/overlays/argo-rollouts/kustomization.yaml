@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: argo-rollouts
 
 helmGlobals:
- chartHome: ../../../../../charts
+ chartHome: ../../../../../../charts
 
 helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-rollouts

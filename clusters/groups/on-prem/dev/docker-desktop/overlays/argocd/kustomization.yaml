@@ -7,7 +7,7 @@ resources:
 - applicationset.yaml
 
 helmGlobals:
- chartHome: ../../../../../charts
+ chartHome: ../../../../../../charts
 
 helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-cd
