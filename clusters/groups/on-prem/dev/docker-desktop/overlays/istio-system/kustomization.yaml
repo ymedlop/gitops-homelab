@@ -44,4 +44,6 @@ helmCharts:
         servicePort: 9090
 
 resources:
-- ../../../../../../base/istio-system
+- argo.docker-desktop.com.yaml
+- global-gateway.yaml
+- kiali-virtual-service.yaml
