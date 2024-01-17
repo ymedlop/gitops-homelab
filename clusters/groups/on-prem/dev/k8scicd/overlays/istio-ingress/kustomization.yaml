@@ -13,3 +13,6 @@ helmCharts:
   version: 1.17.1
   valuesFile: ../../../../../../base/istio-ingress/values.yaml
   releaseName: gateway
+
+resources:
+- ../../../../../../base/istio-ingress
