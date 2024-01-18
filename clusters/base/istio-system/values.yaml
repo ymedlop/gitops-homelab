@@ -1,4 +1,3 @@
-istiod:
-  pilot:
-    env:
-      ISTIOD_ADDR: 'istiod.istio-system.svc:15012'
+pilot:
+  env:
+    ISTIOD_ADDR: 'istiod.istio-system.svc:15012'
