@@ -13,7 +13,7 @@ spec:
           revision: &branch main
           directories:
           - path: clusters/groups/on-prem/dev/{{name}}/overlays/*
-          - path: clusters/groups/on-prem/dev/{{name}}/overlays/argocd
+          - path: clusters/groups/on-prem/dev/in-cluster/overlays/argocd
             exclude: true
   template:
     metadata:
