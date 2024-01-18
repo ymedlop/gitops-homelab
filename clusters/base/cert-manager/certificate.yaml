@@ -8,4 +8,4 @@ spec:
     name: letsencrypt-issuer
     kind: ClusterIssuer
   dnsNames:
-  - "*.k8scicd.local"
+  - "*.k8scicd.dev"
