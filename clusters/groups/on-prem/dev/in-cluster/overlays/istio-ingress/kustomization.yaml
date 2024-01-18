@@ -14,3 +14,7 @@ helmCharts:
   version: 1.20.2
   valuesFile: ../../../../../../base/istio-ingress/values.yaml
   releaseName: gateway
+
+resources:
+- certificate.yaml
+- global-gateway.yaml
