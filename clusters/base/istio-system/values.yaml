@@ -1,4 +1,4 @@
-# kiali-server:
-#   fullnameOverride: kiali-server
-#   auth:
-#     strategy: "anonymous"
+istiod:
+  pilot:
+    env:
+      ISTIOD_ADDR: 'istiod.istio-system.svc:15012'
