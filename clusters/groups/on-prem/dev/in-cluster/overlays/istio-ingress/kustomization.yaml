@@ -16,6 +16,4 @@ helmCharts:
   releaseName: gateway
 
 resources:
-- cluster-issuer.yaml
-- certificate.yaml
 - global-gateway.yaml
