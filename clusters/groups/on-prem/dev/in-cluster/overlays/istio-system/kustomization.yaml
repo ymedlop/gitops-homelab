@@ -11,12 +11,12 @@ helmCharts:
 - name: base
   includeCRDs: true
   repo: https://istio-release.storage.googleapis.com/charts/
-  version: 1.17.1
+  version: 1.20.2
   valuesFile: ../../../../../../base/istio-system/values.yaml
   releaseName: base
 # https://artifacthub.io/packages/helm/istio-official/istiod
 - name: istiod
   repo: https://istio-release.storage.googleapis.com/charts/
-  version: 1.17.1
+  version: 1.20.2
   valuesFile: ../../../../../../base/istio-system/values.yaml
   releaseName: istiod
