@@ -6,20 +6,20 @@ spec:
   selector:
     istio: ingress
   servers:
-    # - hosts:
-    #     - "*"
-    #   port:
-    #     name: https
-    #     number: 443
-    #     protocol: HTTPS
-    #   tls:
-    #     mode: SIMPLE
-    #     credentialName: cert-manager/k8scicd-cert
     - hosts:
         - "*"
       port:
-        name: http
-        number: 80
-        protocol: HTTP
-      tls:
-        httpsRedirect: false
+        name: https
+        number: 443
+        protocol: HTTPS
+    #   tls:
+    #     mode: SIMPLE
+    #     credentialName: cert-manager/k8scicd-cert
+    # - hosts:
+    #     - "*"
+    #   port:
+    #     name: http
+    #     number: 80
+    #     protocol: HTTP
+    #   tls:
+    #     httpsRedirect: false
