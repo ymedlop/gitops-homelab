@@ -6,7 +6,6 @@ spec:
   gateways:
     - istio-ingress/global-gateway
   hosts:
-    - argocd.k8scicd.dev
     - argocd.k8scicd.local
   http:
     - route:
