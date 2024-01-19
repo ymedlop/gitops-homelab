@@ -4,6 +4,7 @@ metadata:
   name: in-cluster-config
   namespace: argocd
 spec:
+  project: addons
   source:
     repoURL: https://github.com/ymedlop/argocd-clusters-management.git
     targetRevision: HEAD
