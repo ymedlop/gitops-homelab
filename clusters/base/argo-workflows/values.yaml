@@ -8,3 +8,6 @@ controller:
   workflowNamespaces:
     - default
     - argo-workflows
+server:
+  authModes:
+    'server'
