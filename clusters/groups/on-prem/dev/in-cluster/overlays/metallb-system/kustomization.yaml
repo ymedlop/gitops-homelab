@@ -15,4 +15,4 @@ helmCharts:
   releaseName: metallb
 
 resources:
-- ipaddress-pool.yaml
+- config.yaml
