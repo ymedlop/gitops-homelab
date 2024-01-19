@@ -14,7 +14,7 @@ spec:
         protocol: HTTPS
       tls:
         mode: SIMPLE
-        #credentialName: cert-manager/k8scicd-cert
+        credentialName: cert-manager/k8scicd-cert
     - hosts:
         - "*"
       port:
