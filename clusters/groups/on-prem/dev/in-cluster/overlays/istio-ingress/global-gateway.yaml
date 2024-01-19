@@ -7,12 +7,25 @@ spec:
     istio: ingress
   servers:
     - hosts:
-        - "*"
+        - "argocd.k8scicd.dev"
       port:
-        name: https
+        name: https-default
         number: 443
         protocol: HTTPS
       tls:
-        mode: SIMPLE
-        httpsRedirect: true
         credentialName: k8scicd-cert
+        httpsRedirect: true
+        minProtocolVersion: TLSV1_2
+        mode: SIMPLE
+    - hosts:
+        - '*'
+      port:
+        name: https-wildcard
+        number: 443
+        protocol: HTTPS
+      tls:
+        credentialName: k8scicd-cert
+        httpsRedirect: true
+        minProtocolVersion: TLSV1_2
+        mode: SIMPLE
+
