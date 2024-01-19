@@ -2,7 +2,7 @@ service:
   type: NodePort
   ports:
   - name: status-port
-    nodePort: 32701
+    nodePort: 32703
     port: 15021
     protocol: TCP
     targetPort: 15021
@@ -12,7 +12,7 @@ service:
     protocol: TCP
     targetPort: 80
   - name: https
-    nodePort: 32703
+    nodePort: 32701
     port: 443
     protocol: TCP
     targetPort: 443
