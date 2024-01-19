@@ -10,6 +10,7 @@ helmCharts:
   namespace: metallb-system
   repo: https://metallb.github.io/metallb
   version: 0.13.12
+  # https://microk8s.io/docs/addon-metallb
   valuesFile: ../../../../../../base/metallb-system/values.yaml
   releaseName: metallb
 
