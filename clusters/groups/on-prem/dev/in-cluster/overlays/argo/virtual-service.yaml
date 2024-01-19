@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: argo-virtualservice
+spec:
+  gateways:
+    - istio-ingress/global-gateway
+  hosts:
+    - argocd-workflows.k8scicd.local
+  http:
+    - route:
+      - destination:
+          host: argo-workflows-server
+          port:
+            number: 80
