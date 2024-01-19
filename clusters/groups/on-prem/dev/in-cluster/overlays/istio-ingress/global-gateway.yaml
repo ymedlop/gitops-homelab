@@ -19,5 +19,5 @@ spec:
         number: 443
         protocol: HTTPS
       tls:
-        credentialName: k8scicd-cert
+        credentialName: cert-manager/k8scicd-cert
         mode: SIMPLE
