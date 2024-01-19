@@ -12,3 +12,6 @@ helmCharts:
   version: 0.13.12
   valuesFile: ../../../../../../base/metallb-system/values.yaml
   releaseName: metallb
+
+resources:
+- ipaddress-pool.yaml
