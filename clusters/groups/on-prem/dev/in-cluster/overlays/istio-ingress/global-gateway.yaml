@@ -7,7 +7,7 @@ spec:
     istio: gateway
   servers:
     - hosts:
-        - "*"
+        - k8scicd.dev
       port:
         name: https
         number: 443
@@ -16,7 +16,7 @@ spec:
         mode: SIMPLE
         credentialName: k8scicd-cert
     - hosts:
-        - "*"
+        - k8scicd.dev
       port:
         name: http
         number: 80
