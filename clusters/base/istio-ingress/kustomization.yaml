@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: istio-ingress
 
 resources:
-- cluster-issuer.yaml
 - ns.yaml
