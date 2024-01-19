@@ -7,17 +7,11 @@ spec:
     istio: ingress
   servers:
     - hosts:
-        - '*'
-      port:
-        name: http
-        number: 80
-        protocol: HTTP
-    - hosts:
-        - '*'
+        - argocd.k8scicd.dev
       port:
         name: https
         number: 443
         protocol: HTTPS
       tls:
-        credentialName: cert-manager/k8scicd-cert
+        credentialName: k8scicd-cert
         mode: SIMPLE

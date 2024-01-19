@@ -34,4 +34,5 @@ helmCharts:
   #       targetPort: 80
 
 resources:
+- certificate.yaml
 - global-gateway.yaml
