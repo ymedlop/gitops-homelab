@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: cert-manager
 
 resources:
-- cluster-issuer.yaml
 - https://github.com/cert-manager/cert-manager/releases/download/v1.13.3/cert-manager.crds.yaml

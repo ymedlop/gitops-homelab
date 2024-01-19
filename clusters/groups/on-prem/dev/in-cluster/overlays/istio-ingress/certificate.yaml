@@ -5,8 +5,8 @@ metadata:
 spec:
   secretName: k8scicd-cert
   issuerRef:
-    name: letsencrypt-issuer
-    kind: ClusterIssuer
-  commonName: "argocd-k8scicd.com"
+    name: selfsigned
+    kind: Issuer
+  commonName: "*.k8scicd.dev"
   dnsNames:
-  - "argocd-k8scicd.com"
+  - "*.k8scicd.dev"
