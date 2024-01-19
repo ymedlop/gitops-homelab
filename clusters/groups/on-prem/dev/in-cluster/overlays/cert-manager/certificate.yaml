@@ -9,4 +9,4 @@ spec:
     kind: ClusterIssuer
   commonName: "*.k8scicd.dev"
   dnsNames:
-  - "*.k8scicd.dev"
+  - "argo-cd.k8scicd.dev"
