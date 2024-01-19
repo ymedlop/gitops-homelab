@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: in-cluster-config
+  name: in-cluster-argocd-config
   namespace: argocd
 spec:
   project: addons
