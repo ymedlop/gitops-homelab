@@ -7,7 +7,7 @@ spec:
     istio: ingress
   servers:
     - hosts:
-        - "argocd.k8scicd.dev"
+        - "k8scicd.dev"
       port:
         name: https-default
         number: 443
