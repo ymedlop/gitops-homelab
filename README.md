@@ -20,9 +20,6 @@ You will need to install the following tools to use the repository:
 * [git](https://git-scm.com/)
 * [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * [kustomize](https://kubernetes-sigs.github.io/kustomize/installation/)
-* [argocd cli](https://argo-cd.readthedocs.io/en/stable/getting_started/#2-download-argo-cd-cli)
-* [docker-desktop](https://www.docker.com/products/docker-desktop) - or access to an empty Kubernetes cluster
-* [k3d](https://k3d.io/) - or access to an empty Kubernetes cluster
 
 ## Getting Started
 
@@ -37,12 +34,13 @@ Time to check our deployment repository. As you can expect it contains deploymen
 ```
 clusters/base
 ├── argo
-└── argo-rollouts
+├── argo-rollouts
+└── argocd
 ```
 
 Each directory represents a single application. The typical recommendation to application developers is to leverage Argo CD and manually create Argo CD Application CR per directory.
 This is perfectly fine if you need to manage a few applications but cluster administrators have to take care of dozens if not hundreds! Creating Argo CD applications manually is not an option.
-Instead, we can GitOps Argo CD configuration and let it manage itself. As you could've noticed, one of the directories is called `argo`. This directory contains Argo CD installation manifests.
+Instead, we can GitOps Argo CD configuration and let it manage itself. As you could've noticed, one of the directories is called `argocd`. This directory contains Argo CD installation manifests.
 
 ### Cluster Groups
 
@@ -59,7 +57,9 @@ clusters/groups
                 └── <addons-2>
 ```
 
-For my current homelab I will avoid the environment level because does not have sense for me.
+## Homelab
+
+For my current homelab I will avoid the environment level because does it not have sense for me.
 ```
 clusters/groups
 └── on-prem
@@ -67,5 +67,9 @@ clusters/groups
         └── overlays
             ├── argo
             └── argo-rollouts
-            └── argo
+            └── argocd
 ```
+
+I going to use an Old Mac Mini to have a CICD Cluster to allow me to use and lear about the the whole Argo Project.
+
+<img width="50%" height="50%" src="images/k8scicd01.jpg" style="display: block; margin: 0 auto" alt="CICD Cluster">

@@ -6,4 +6,4 @@ Kubernetes Bare metal Cluster created using the following [manual](https://askcl
 
 Old Mac Mid 2010 running Ubuntu Server and Microk8s.
 
-<img align="center" width="50%" height="50%" src="../../../../images/k8scicd01.jpg">
+<img width="50%" height="50%" src="../../../../images/k8scicd01.jpg" style="display: block; margin: 0 auto" alt="CICD Cluster">
