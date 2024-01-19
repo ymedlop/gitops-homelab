@@ -1,5 +1,5 @@
-kubectl kustomize clusters\groups\on-prem\dev\docker-desktop --enable-helm --load-restrictor LoadRestrictionsNone | kubectl apply -f -
+kubectl kustomize clusters\groups\on-prem\in-cluster --enable-helm --load-restrictor LoadRestrictionsNone | kubectl apply -f -
 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
 
-kubectl port-forward svc/argocd-server -n argocd 8080:80
+ECHO kubectl port-forward svc/argocd-server -n argocd 8080:80
