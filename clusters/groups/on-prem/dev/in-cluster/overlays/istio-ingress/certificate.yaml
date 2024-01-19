@@ -7,6 +7,6 @@ spec:
   issuerRef:
     name: letsencrypt-issuer
     kind: ClusterIssuer
-  commonName: *.k8scicd.dev
+  commonName: "*.k8scicd.dev"
   dnsNames:
-  - *.k8scicd.dev
+  - "*.k8scicd.dev"
