@@ -6,7 +6,7 @@ spec:
   gateways:
     - global-gateway
   hosts:
-    - "argocd.k8scicd.dev"
+    - argocd.k8scicd.dev
   http:
     - route:
       - destination:
