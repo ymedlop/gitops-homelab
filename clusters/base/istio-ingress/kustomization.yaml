@@ -4,3 +4,4 @@ namespace: istio-ingress
 
 resources:
 - ns.yaml
+- issuer.yaml
