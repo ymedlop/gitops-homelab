@@ -15,11 +15,3 @@ spec:
       tls:
         credentialName: k8scicd-cert
         mode: SIMPLE
-    - hosts:
-        - argocd.k8scicd.dev
-      port:
-        name: http
-        number: 80
-        protocol: HTTP
-      tls:
-        httpsRedirect: false
