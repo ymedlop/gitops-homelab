@@ -7,6 +7,6 @@ spec:
   issuerRef:
     name: selfsigned
     kind: Issuer
-  commonName: "*.k8scicd.dev"
+  commonName: "argocd.k8scicd.dev"
   dnsNames:
-  - "*.k8scicd.dev"
+  - "argocd.k8scicd.dev"
