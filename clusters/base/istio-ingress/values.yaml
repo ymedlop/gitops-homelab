@@ -8,11 +8,11 @@ service:
     targetPort: 15021
   - name: http
     nodePort: 32702
-    port: 8080
+    port: 80
     protocol: TCP
     targetPort: 80
   - name: https
     nodePort: 32703
-    port: 8443
+    port: 443
     protocol: TCP
     targetPort: 443
