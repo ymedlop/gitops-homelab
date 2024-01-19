@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmGlobals:
+ chartHome: ../../../../../../charts
+
+helmCharts:
+# https://artifacthub.io/packages/helm/metallb/metallb
+- name: metallb
+  namespace: metallb-system
+  repo: https://metallb.github.io/metallb
+  version: 0.13.12
+  valuesFile: ../../../../../../base/metallb-system/values.yaml
+  releaseName: metallb
