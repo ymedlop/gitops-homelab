@@ -4,6 +4,6 @@ Kubernetes Bare metal Cluster created using the following [manual](https://askcl
 
 ## First Node - k8s0cicd01
 
-Old Mac Mini 2012 running Ubuntu Server and Microk8s.
+Old Mac Mid 2010 running Ubuntu Server and Microk8s.
 
 <img align="center" width="50%" height="50%" src="../../../../../images/k8scicd01.jpg">
