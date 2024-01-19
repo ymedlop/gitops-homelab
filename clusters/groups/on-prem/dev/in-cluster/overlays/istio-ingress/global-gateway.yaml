@@ -4,28 +4,20 @@ metadata:
   name: global-gateway
 spec:
   selector:
-    istio: gateway
+    istio: ingress
   servers:
-    - hosts:
-        - "k8scicd.dev"
-      port:
-        name: https-default
-        number: 443
-        protocol: HTTPS
-      tls:
-        credentialName: k8scicd-cert
-        httpsRedirect: true
-        minProtocolVersion: TLSV1_2
-        mode: SIMPLE
     - hosts:
         - '*'
       port:
-        name: https-wildcard
+        name: http
+        number: 80
+        protocol: HTTP
+    - hosts:
+        - '*'
+      port:
+        name: https
         number: 443
         protocol: HTTPS
       tls:
         credentialName: k8scicd-cert
-        httpsRedirect: true
-        minProtocolVersion: TLSV1_2
         mode: SIMPLE
-
