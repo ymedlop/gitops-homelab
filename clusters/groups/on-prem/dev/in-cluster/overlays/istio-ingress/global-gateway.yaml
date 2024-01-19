@@ -7,7 +7,7 @@ spec:
     istio: gateway
   servers:
     - hosts:
-        - argocd.k8scicd.dev
+        - '*'
       port:
         name: https
         number: 443
