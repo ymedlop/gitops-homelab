@@ -11,6 +11,7 @@ spec:
     organizations:
     - cluster.local
     - cert-manager
-  commonName: "argocd.k8scicd.dev"
+  commonName: "k8scicd"
   dnsNames:
   - "argocd.k8scicd.dev"
+  - "argocd.k8scicd.local"
