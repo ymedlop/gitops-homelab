@@ -4,22 +4,15 @@ metadata:
   name: global-gateway
 spec:
   selector:
-    istio: gateway
+    istio: ingress
   servers:
     - hosts:
-        - k8scicd.dev
+        - "*"
       port:
         name: https
         number: 443
         protocol: HTTPS
       tls:
         mode: SIMPLE
+        httpsRedirect: true
         credentialName: k8scicd-cert
-    - hosts:
-        - k8scicd.dev
-      port:
-        name: http
-        number: 80
-        protocol: HTTP
-      tls:
-        httpsRedirect: false
