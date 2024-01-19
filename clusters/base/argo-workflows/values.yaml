@@ -6,8 +6,8 @@ workflow:
     create: true
 controller:
   workflowNamespaces:
-    - default
-    - argo-workflows
+  - default
+  - argo-workflows
 server:
   authModes:
-    'server'
+  - 'server'
