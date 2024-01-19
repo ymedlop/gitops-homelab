@@ -16,4 +16,3 @@ helmCharts:
 
 resources:
 - ../../../../../../base/cert-manager
-- certificate.yaml
