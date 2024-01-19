@@ -3,16 +3,16 @@ kind: Kustomization
 namespace: cert-manager
 
 helmGlobals:
- chartHome: ../../../../../../charts
+ chartHome: ../../../../../charts
 
 helmCharts:
   # https://artifacthub.io/packages/helm/cert-manager/cert-manager
 - name: cert-manager
-  includeCRDs: true
+  namespace: cert-manager
   repo: https://charts.jetstack.io/
-  version: 1.11.0
-  valuesFile: ../../../../../../base/cert-manager/values.yaml
+  version: 1.13.3
+  valuesFile: ../../../../../base/cert-manager/values.yaml
   releaseName: cert-manager
 
 resources:
-- ../../../../../../base/cert-manager
+- ../../../../../base/cert-manager

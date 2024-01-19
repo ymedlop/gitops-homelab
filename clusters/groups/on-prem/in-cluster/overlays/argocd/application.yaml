@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/ymedlop/argocd-clusters-management.git
     targetRevision: HEAD
-    path: clusters/groups/on-prem/dev/in-cluster/overlays/argocd/config
+    path: clusters/groups/on-prem/in-cluster/overlays/argocd/config
   destination:
     name: in-cluster
     namespace: argocd

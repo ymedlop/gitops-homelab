@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: istio-ingress
 
 helmGlobals:
- chartHome: ../../../../../../charts
+ chartHome: ../../../../../charts
 
 helmCharts:
   # https://istio.io/latest/docs/setup/install/helm/
@@ -33,6 +33,6 @@ helmCharts:
         targetPort: 80
 
 resources:
-- ../../../../../../base/istio-ingress
+- ../../../../../base/istio-ingress
 - certificate.yaml
 - global-gateway.yaml

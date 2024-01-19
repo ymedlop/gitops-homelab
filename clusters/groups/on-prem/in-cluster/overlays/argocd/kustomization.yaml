@@ -3,18 +3,18 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- ../../../../../../base/argocd
+- ../../../../../base/argocd
 - application.yaml
 
 helmGlobals:
- chartHome: ../../../../../../charts
+ chartHome: ../../../../../charts
 
 helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-cd
 - name: argo-cd
   repo: https://argoproj.github.io/argo-helm
   version: 5.52.1
-  valuesFile: ../../../../../../base/argocd/values.yaml
+  valuesFile: ../../../../../base/argocd/values.yaml
   releaseName: argocd
   includeCRDs: true
   valuesMerge: merge

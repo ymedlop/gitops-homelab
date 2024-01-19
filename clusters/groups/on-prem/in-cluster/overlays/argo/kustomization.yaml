@@ -3,9 +3,10 @@ kind: Kustomization
 
 resources:
 - ns.yaml
+- virtual-service.yaml
 
 helmGlobals:
- chartHome: ../../../../../../charts
+ chartHome: ../../../../../charts
 
 helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-workflows
@@ -13,5 +14,5 @@ helmCharts:
   namespace: argo
   repo: https://argoproj.github.io/argo-helm
   version: 0.40.5
-  valuesFile: ../../../../../../base/argo-workflows/values.yaml
+  valuesFile: ../../../../../base/argo-workflows/values.yaml
   releaseName: argo-workflows
