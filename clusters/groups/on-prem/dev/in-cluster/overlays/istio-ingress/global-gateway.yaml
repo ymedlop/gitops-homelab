@@ -4,7 +4,7 @@ metadata:
   name: global-gateway
 spec:
   selector:
-    istio: ingress
+    istio: gateway
   servers:
     - hosts:
         - argocd.k8scicd.dev
