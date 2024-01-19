@@ -7,12 +7,12 @@ service:
     protocol: TCP
     targetPort: 15021
   - name: http
-    nodePort: 321245
+    nodePort: 32702
     port: 80
     protocol: TCP
     targetPort: 80
   - name: https
-    nodePort: 32535
+    nodePort: 32703
     port: 443
     protocol: TCP
     targetPort: 443
