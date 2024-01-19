@@ -17,7 +17,7 @@ helmCharts:
     service:
       type: LoadBalancer
       annotations:
-        metallb.universe.tf/address-pool: custom-addresspool
+        metallb.universe.tf/address-pool: first-pool
       ports:
       - name: status-port
         port: 15021
