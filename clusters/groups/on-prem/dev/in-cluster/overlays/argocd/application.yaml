@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: in-cluster-config
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/ymedlop/argocd-clusters-management.git
+    targetRevision: HEAD
+    path: clusters/groups/on-prem/dev/in-cluster/overlays/argocd/config
+  destination:
+    name: in-cluster
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

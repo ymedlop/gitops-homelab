@@ -4,7 +4,7 @@ namespace: argocd
 
 resources:
 - ../../../../../../base/argocd
-- applicationset.yaml
+- application.yaml
 
 helmGlobals:
  chartHome: ../../../../../../charts
