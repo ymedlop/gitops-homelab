@@ -49,13 +49,23 @@ Instead, we can GitOps Argo CD configuration and let it manage itself. As you co
 In real life, changes are rarely made to all clusters at the same time. Instead, clusters are grouped logically and changes are "promoted" from group to group. In the same way, we use directory structure conversion in the Git repository to represent individual applications, we can use the directory structure to represent cluster groups.
 
 Let's take a look at the directory structure:
-
 ```
 clusters/groups
 └── <cloud-provider>
     └── <environment>
         └── <cluster>
             └── overlays
-                ├── argo-rollouts
-                └── argo
+                ├── <addons-1>
+                └── <addons-2>
+```
+
+For my current homelab I will avoid the environment level because does not have sense for me.
+```
+clusters/groups
+└── on-prem
+    └── in-cluster
+        └── overlays
+            ├── argo
+            └── argo-rollouts
+            └── argo
 ```
