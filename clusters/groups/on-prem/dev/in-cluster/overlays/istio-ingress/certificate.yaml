@@ -7,6 +7,10 @@ spec:
   issuerRef:
     name: selfsigned
     kind: Issuer
+  subject:
+    organizations:
+    - cluster.local
+    - cert-manager
   commonName: "argocd.k8scicd.dev"
   dnsNames:
   - "argocd.k8scicd.dev"
