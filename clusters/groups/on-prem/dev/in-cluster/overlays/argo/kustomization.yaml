@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - ns.yaml
+- virtual-service.yaml
 
 helmGlobals:
  chartHome: ../../../../../../charts
