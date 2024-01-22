@@ -34,9 +34,8 @@ spec:
         syncOptions:
           - CreateNamespace=true
       ignoreDifferences:
-      - group: admissionregistration.k8s.io/v1
+      - group: admissionregistration.k8s.io
         kind: ValidatingWebhookConfiguration
         name: istiod-default-validator
-        namespace: istio-system
-        jqPathExpressions:
-        - .webhooks[]?.failurePolicy
+        jsonPointers:
+          - /webhooks/0/failurePolicy
