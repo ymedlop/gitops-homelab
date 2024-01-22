@@ -33,3 +33,10 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+      ignoreDifferences:
+      - group: admissionregistration.k8s.io/v1
+        kind: ValidatingWebhookConfiguration
+        name: istiod-default-validator
+        namespace: istio-system
+        jsonPointers:
+        - /webhooks[0]/failurePolicy
