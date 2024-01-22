@@ -15,6 +15,8 @@ spec:
           - path: clusters/groups/on-prem/{{name}}/overlays/*/rendered
           - path: clusters/groups/on-prem/in-cluster/overlays/argocd
             exclude: true
+          - path: clusters/groups/on-prem/in-cluster/overlays/argocd/rendered
+            exclude: true
   template:
     metadata:
       name: '{{name}}-{{path[5]}}'
