@@ -17,7 +17,7 @@ spec:
             exclude: true
   template:
     metadata:
-      name: '{{name}}-{{index .path.segments 6}}'
+      name: '{{name}}-{{path[6]}}'
     spec:
       project: addons
       source:
