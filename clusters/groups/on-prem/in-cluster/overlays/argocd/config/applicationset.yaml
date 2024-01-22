@@ -23,7 +23,7 @@ spec:
       source:
         repoURL: *repo
         targetRevision: *branch
-        path: '{{path}}'
+        path: '{{path[5]}}'
       destination:
         name: '{{name}}'
         namespace: '{{path.basename}}'
