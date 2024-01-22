@@ -39,4 +39,4 @@ spec:
         name: istiod-default-validator
         namespace: istio-system
         jqPathExpressions:
-        - /webhooks[0]/failurePolicy
+        - .webhooks[0].failurePolicy
