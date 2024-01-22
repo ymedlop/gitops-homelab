@@ -38,5 +38,5 @@ spec:
         kind: ValidatingWebhookConfiguration
         name: istiod-default-validator
         namespace: istio-system
-        jsonPointers:
+        jqPathExpressions:
         - /webhooks[0]/failurePolicy
