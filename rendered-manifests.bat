@@ -1,5 +1,7 @@
 @ECHO OFF
 
+ECHO TODO: Move to GH Actions
+
 CLS
 
 FOR /D /r %%G in ("clusters\groups\*") DO (
