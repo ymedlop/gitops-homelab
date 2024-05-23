@@ -1,1 +1,11 @@
+apiVersion: v2
+name: definitions
+description: definitions
+type: application
+version: 1.0.0
 
+dependencies:
+  # https://hub.docker.com/r/bitnami/mongodb
+  - name: rabbitmq
+    version: 14.3.0
+    repository: https://charts.bitnami.com/bitnami
