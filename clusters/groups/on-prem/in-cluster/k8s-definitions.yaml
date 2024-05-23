@@ -12,10 +12,10 @@ spec:
           repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
           revision: &branch main
           directories:
-          - path: clusters/groups/on-prem/{{name}}/*
+          - path: clusters/groups/on-prem/{{name}}/*/*
   template:
     metadata:
-      name: '{{name}}-{{path[4]}}'
+      name: '{{name}}-{{path[5]}}'
     spec:
       project: default
       source:
@@ -28,7 +28,7 @@ spec:
             - values.yaml
       destination:
         name: '{{name}}'
-        namespace: '{{path[4]}}'
+        namespace: '{{path[5]}}'
       syncPolicy:
         automated:
           prune: true
