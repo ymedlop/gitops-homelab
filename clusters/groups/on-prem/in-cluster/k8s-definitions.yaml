@@ -17,11 +17,15 @@ spec:
     metadata:
       name: '{{name}}-{{path[4]}}'
     spec:
-      project: addons
+      project: default
       source:
         repoURL: *repo
         targetRevision: *branch
         path: '{{path}}'
+        helm:
+          releaseName: "{{path.basename}}"
+          valueFiles:
+            - values.yaml
       destination:
         name: '{{name}}'
         namespace: '{{path[4]}}'
