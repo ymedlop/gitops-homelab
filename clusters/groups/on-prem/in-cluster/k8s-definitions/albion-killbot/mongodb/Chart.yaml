@@ -7,5 +7,5 @@ version: 1.0.0
 dependencies:
   # https://hub.docker.com/r/bitnami/mongodb
   - name: mongodb
-    version: 15.5.2
-    repository: https://charts.bitnami.com/bitnami
+    version: 6.2.1
+    repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
