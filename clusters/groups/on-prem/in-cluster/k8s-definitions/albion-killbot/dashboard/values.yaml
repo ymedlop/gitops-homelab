@@ -6,9 +6,14 @@ micro-nodejs:
       pullPolicy: IfNotPresent
       repository: agnjunio/albion-killbot-dashboard
       tag: 4.0.3
-    # env:
-    #   REACT_APP_DISCORD_CLIENT_ID: 
-    #   REACT_APP_DISCORD_REDIRECT_URI:
+    env:
+    - name: REACT_APP_DISCORD_REDIRECT_URI
+      value: http://localhost/auth
+    - name: REACT_APP_DISCORD_CLIENT_ID
+      valueFrom:
+        secretKeyRef:
+          name: discord-secrets
+          key: DISCORD_CLIENT_ID
 
   service:
     ports:

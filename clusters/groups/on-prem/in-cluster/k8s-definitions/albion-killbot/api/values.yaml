@@ -11,6 +11,11 @@ micro-nodejs:
     - -c
     - npm run start:api
     env:
+      - name: DISCORD_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: discord-secrets
+            key: DISCORD_TOKEN
       - name: RABBITMQ_URL
         value: amqp://rabbitmq
       - name: MONGODB_URL

@@ -11,7 +11,11 @@ micro-nodejs:
     - -c
     - npm run start:bot
     env:
-      # DISCORD_TOKEN: <your discord token here>
+      - name: DISCORD_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: discord-secrets
+            key: DISCORD_TOKEN
       - name: MONGODB_URL
         value: mongodb://mongodb:27017/albion-killbot
       - name: RABBITMQ_URL
