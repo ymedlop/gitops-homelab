@@ -12,5 +12,7 @@ micro-nodejs:
     - npm run start:bot
     env:
       # DISCORD_TOKEN: <your discord token here>
-      MONGODB_URL: mongodb://mongodb:27017/albion-killbot
-      RABBITMQ_URL: amqp://rabbitmq
+      - name: MONGODB_URL
+        value: mongodb://mongodb:27017/albion-killbot
+      - name: RABBITMQ_URL
+        value: amqp://rabbitmq
