@@ -41,7 +41,7 @@ micro-nodejs:
       - name: MAX_ALLIANCES
         value: "1"
       - name: DASHBOARD_URL
-        value: https://albion-killbot-dashboard.k8scicd.local/
+        value: https://albion-killbot-dashboard.k8scicd.local
       - name: RABBITMQ_URL
         value: amqp://rabbitmq
       - name: MONGODB_URL
