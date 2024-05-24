@@ -1,4 +1,0 @@
-mongodb:
-  architecture: "standalone"
-  persistence:
-    enabled: false
