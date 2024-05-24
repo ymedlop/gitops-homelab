@@ -1,0 +1,11 @@
+micro-nodejs:
+  fullnameOverride: crawler
+  deployment:
+    replicas: 1
+    image:
+      pullPolicy: IfNotPresent
+      repository: agnjunio/albion-killbot
+      tag: 4.23.4
+    command: npm run start:crawler
+    env:
+      RABBITMQ_URL: amqp://rabbitmq

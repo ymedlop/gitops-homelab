@@ -1,0 +1,13 @@
+micro-nodejs:
+  fullnameOverride: bot
+  deployment:
+    replicas: 1
+    image:
+      pullPolicy: IfNotPresent
+      repository: agnjunio/albion-killbot
+      tag: 4.23.4
+    command: npm run start:bot
+    env:
+      # DISCORD_TOKEN: <your discord token here>
+      MONGODB_URL: mongodb://mongodb:27017/albion-killbot
+      RABBITMQ_URL: amqp://rabbitmq
