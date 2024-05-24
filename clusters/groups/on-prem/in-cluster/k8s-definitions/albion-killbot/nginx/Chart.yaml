@@ -7,5 +7,5 @@ version: 1.0.0
 dependencies:
   # https://ymedlop.github.io/micro-helm-charts
   - name: micro-nginx
-    version: 1.0.3
+    version: 1.0.4
     repository: https://ymedlop.github.io/micro-helm-charts
