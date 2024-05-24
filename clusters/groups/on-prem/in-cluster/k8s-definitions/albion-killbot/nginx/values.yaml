@@ -2,20 +2,20 @@ micro-base:
   fullnameOverride: nginx
   runtime: nginx
   deployment:
-  replicas: 1
-  image:
-    pullPolicy: IfNotPresent
-    repository: nginx
-    tag: stable-otel
-  readinessProbe:
-    enabled: false
-  livenessProbe:
-    enabled: false
-  # TODO: ports
-  ports:
-    - name: http
-      containerPort: 80
-      protocol: TCP
+    replicas: 1
+    image:
+      pullPolicy: IfNotPresent
+      repository: nginx
+      tag: stable-otel
+    readinessProbe:
+      enabled: false
+    livenessProbe:
+      enabled: false
+    # TODO: ports
+    ports:
+      - name: http
+        containerPort: 80
+        protocol: TCP
   # TODO: Configmap volume mounts
   volumeMounts:
     - name: nginx-config
