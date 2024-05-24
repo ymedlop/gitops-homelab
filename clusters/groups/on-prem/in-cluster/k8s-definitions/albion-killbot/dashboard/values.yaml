@@ -6,6 +6,10 @@ micro-nodejs:
       pullPolicy: IfNotPresent
       repository: agnjunio/albion-killbot-dashboard
       tag: 4.0.3
+    ports:
+      - name: http
+        containerPort: 80
+        protocol: TCP
     env:
     - name: REACT_APP_DISCORD_REDIRECT_URI
       value: http://localhost/auth
@@ -17,7 +21,7 @@ micro-nodejs:
 
   service:
     ports:
-      - name: http-8080
-        port: 8080
+      - name: http-80
+        port: 80
         protocol: TCP
         targetPort: http
