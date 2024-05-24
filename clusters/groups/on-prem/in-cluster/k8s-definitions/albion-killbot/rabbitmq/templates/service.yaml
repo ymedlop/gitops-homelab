@@ -14,7 +14,7 @@ spec:
       port: 15672
       protocol: TCP
       targetPort: rabbitmq
-    - name: rabbitmq
+    - name: rabbitmq-2
       port: 5672
       protocol: TCP
       targetPort: rabbitmq
