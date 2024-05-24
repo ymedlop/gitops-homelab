@@ -1,0 +1,18 @@
+micro-nodejs:
+  fullnameOverride: dashboard
+  deployment:
+    replicas: 1
+    image:
+      pullPolicy: IfNotPresent
+      repository: agnjunio/albion-killbot-dashboard
+      tag: 4.0.3
+    # env:
+    #   REACT_APP_DISCORD_CLIENT_ID: 
+    #   REACT_APP_DISCORD_REDIRECT_URI:
+
+  service:
+    ports:
+      - name: http-8080
+        port: 8080a
+        protocol: TCP
+        targetPort: http
