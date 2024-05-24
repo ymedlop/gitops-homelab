@@ -42,14 +42,14 @@ spec:
           readinessProbe:
             exec:
               command:
-                - echo 'db.runCommand("ping").ok' | mongo localhost:27017/test --quiet
-            initialDelaySeconds: 5
+                - echo 'db.runCommand("ping").ok' | mongo mongodb:27017/test --quiet
+            initialDelaySeconds: 15
             periodSeconds: 5
             timeoutSeconds: 30
           livenessProbe:
             exec:
               command:
-                - echo 'db.runCommand("ping").ok' | mongo localhost:27017/test --quiet
+                - echo 'db.runCommand("ping").ok' | mongo mongodb:27017/test --quiet
             initialDelaySeconds: 5
             periodSeconds: 5
             timeoutSeconds: 30
