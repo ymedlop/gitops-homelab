@@ -31,15 +31,15 @@ micro-nodejs:
             name: discord-secrets
             key: DISCORD_CLIENT_SECRET
       - name: DISCORD_COMMUNITY_ADMINS
-        value: 187208303401500672
+        value: "187208303401500672"
       - name: DISCORD_COMMUNITY_SERVER
-        value: 1242943818488352809
+        value: "1242943818488352809"
       - name: MAX_PLAYERS
-        value: 10
+        value: "10"
       - name: MAX_GUILDS
-        value: 1
+        value: "1"
       - name: MAX_ALLIANCES
-        value: 1
+        value: "1"
       - name: DASHBOARD_URL
         value: https://albion-killbot-dashboard.k8scicd.local/
       - name: RABBITMQ_URL
