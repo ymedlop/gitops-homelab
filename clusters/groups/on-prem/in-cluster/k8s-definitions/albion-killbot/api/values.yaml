@@ -5,8 +5,9 @@ micro-nodejs:
     image:
       pullPolicy: IfNotPresent
       repository: agnjunio/albion-killbot
-      tag: 4.23.3
+      tag: 4.23.4
     command:
+    - /bin/bash
     - npm run start:api
     env:
       RABBITMQ_URL: amqp://rabbitmq
