@@ -39,19 +39,3 @@ spec:
             - name: mongodb-config
               mountPath: /data/configdb
           image: "mongo:4.4-focal"
-          readinessProbe:
-            exec:
-              command:
-                - sh
-                - echo 'db.runCommand("ping").ok' | mongo mongodb:27017/test --quiet
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            timeoutSeconds: 30
-          livenessProbe:
-            exec:
-              command:
-                - sh
-                - echo 'db.runCommand("ping").ok' | mongo mongodb:27017/test --quiet
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            timeoutSeconds: 30
