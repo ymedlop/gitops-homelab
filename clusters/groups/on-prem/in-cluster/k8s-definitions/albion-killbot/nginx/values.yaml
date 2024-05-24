@@ -43,7 +43,7 @@ micro-nginx:
             add_header X-Cache-Status $upstream_cache_status;
 
             resolver kube-dns.kube-system.svc.cluster.local valid=30s;
-            set $api api;
+            set $api api.albion-killbot.svc.cluster.local;;
 
             proxy_cache akcache;
             proxy_pass http://$api;
@@ -53,7 +53,7 @@ micro-nginx:
 
           location / {
             resolver kube-dns.kube-system.svc.cluster.local valid=30s;
-            set $dashboard dashboard;
+            set $dashboard dashboard.albion-killbot.svc.cluster.local;
 
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header Host $host;
