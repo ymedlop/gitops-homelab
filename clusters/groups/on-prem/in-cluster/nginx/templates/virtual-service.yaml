@@ -10,6 +10,6 @@ spec:
   http:
     - route:
       - destination:
-          host: dashboard
+          host: nginx
           port:
             number: 80
