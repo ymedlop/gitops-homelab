@@ -6,6 +6,10 @@ micro-nodejs:
       pullPolicy: IfNotPresent
       repository: agnjunio/albion-killbot
       tag: 4.23.4
+    ports:
+      - name: http
+        containerPort: 80
+        protocol: TCP
     command:
     - /bin/bash
     - -c
@@ -33,7 +37,7 @@ micro-nodejs:
 
   service:
     ports:
-      - name: http-8080
-        port: 8080
+      - name: http-80
+        port: 80
         protocol: TCP
         targetPort: http
