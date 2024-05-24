@@ -1,0 +1,76 @@
+micro-base:
+  fullnameOverride: nginx
+  runtime: nginx
+  deployment:
+  replicas: 1
+  image:
+    pullPolicy: IfNotPresent
+    repository: nginx
+    tag: stable-otel
+  readinessProbe:
+    enabled: false
+  livenessProbe:
+    enabled: false
+  # TODO: ports
+  ports:
+    - name: http
+      containerPort: 80
+      protocol: TCP
+  # TODO: Configmap volume mounts
+  volumeMounts:
+    - name: nginx-config
+      mountPath: /etc/nginx/conf.d
+      configName: nginx-cm
+  # TOOD: Configmap
+  configmap:
+    enabled: true
+    instances:
+      - name: nginx-cm
+        data:
+          default.conf: |
+            proxy_cache_path /var/cache/albion-killbot keys_zone=akcache:10m loader_threshold=300 loader_files=200;
+            proxy_cache_valid 200 302 15m;
+            proxy_cache_valid 404      1m;
+
+            limit_req_zone $binary_remote_addr zone=aklimit:10m rate=5r/s;
+            limit_req_status 429;
+
+            server {
+              listen 80;
+
+              proxy_set_header X-Forwarded-Proto $scheme;
+
+              location /api/ {
+                limit_req zone=aklimit burst=5;
+                add_header X-Cache-Status $upstream_cache_status;
+
+                resolver 127.0.0.11 valid=30s;
+                set $api api;
+
+                proxy_cache akcache;
+                proxy_pass http://$api;
+
+                rewrite /api(.*) $1 break;
+              }
+
+              location / {
+                resolver 127.0.0.11 valid=30s;
+                set $dashboard dashboard;
+
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+
+                proxy_pass http://$dashboard;
+
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+              }
+            }
+
+  service:
+    ports:
+      - name: http-80
+        port: 80
+        protocol: TCP
+        targetPort: http

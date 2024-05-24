@@ -3,3 +3,9 @@ name: definitions
 description: definitions
 type: application
 version: 1.0.0
+
+dependencies:
+  # https://github.com/ymedlop/micro-helm-charts
+  - name: micro-base
+    version: 1.0.1
+    repository: https://ymedlop.github.io/micro-helm-charts/
