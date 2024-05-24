@@ -11,5 +11,7 @@ micro-nodejs:
     - -c
     - npm run start:crawler
     env:
+      - name: MONGODB_URL
+        value: mongodb://mongodb:27017/albion-killbot
       - name: AMQP_URL
         value: amqp://rabbitmq
