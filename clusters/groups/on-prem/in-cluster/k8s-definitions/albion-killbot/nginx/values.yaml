@@ -16,11 +16,11 @@ micro-base:
       - name: http
         containerPort: 80
         protocol: TCP
-  # TODO: Configmap volume mounts
-  volumeMounts:
-    - name: nginx-config
-      mountPath: /etc/nginx/conf.d
-      configName: nginx-cm
+    # TODO: Configmap volume mounts
+    volumeMounts:
+      - name: nginx-config
+        mountPath: /etc/nginx/conf.d
+        configName: nginx-cm
   # TOOD: Configmap
   configmap:
     enabled: true
