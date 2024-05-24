@@ -44,7 +44,7 @@ spec:
               command:
                 - sh
                 - echo 'db.runCommand("ping").ok' | mongo mongodb:27017/test --quiet
-            initialDelaySeconds: 15
+            initialDelaySeconds: 5
             periodSeconds: 5
             timeoutSeconds: 30
           livenessProbe:
