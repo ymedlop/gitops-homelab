@@ -8,4 +8,4 @@ dependencies:
   # https://ymedlop.github.io/micro-helm-charts
   - name: micro-base
     version: 1.0.1
-    repository: https://ymedlop.github.io/micro-helm-charts/index.yaml
+    repository: https://ymedlop.github.io/micro-helm-charts
