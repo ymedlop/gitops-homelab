@@ -18,5 +18,5 @@ micro-nodejs:
             key: DISCORD_TOKEN
       - name: MONGODB_URL
         value: mongodb://mongodb:27017/albion-killbot
-      - name: RABBITMQ_URL
+      - name: AMQP_URL
         value: amqp://rabbitmq
