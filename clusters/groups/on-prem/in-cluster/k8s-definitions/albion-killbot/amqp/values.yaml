@@ -1,0 +1,3 @@
+rabbitmq:
+  persistence:
+    enabled: false
