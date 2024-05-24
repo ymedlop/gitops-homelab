@@ -16,7 +16,7 @@ micro-nodejs:
         protocol: TCP
     env:
     - name: REACT_APP_DISCORD_REDIRECT_URI
-      value: http://localhost/auth
+      value: https://albion-killbot-dashboard.k8scicd.local/auth
     - name: REACT_APP_DISCORD_CLIENT_ID
       valueFrom:
         secretKeyRef:
