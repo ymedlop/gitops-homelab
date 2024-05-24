@@ -42,7 +42,7 @@ micro-nginx:
             limit_req zone=aklimit burst=5;
             add_header X-Cache-Status $upstream_cache_status;
 
-            resolver 127.0.0.11 valid=30s;
+            resolver kube-dns.kube-system.svc.cluster.local valid=30s;
             set $api api;
 
             proxy_cache akcache;
@@ -52,7 +52,7 @@ micro-nginx:
           }
 
           location / {
-            resolver 127.0.0.11 valid=30s;
+            resolver kube-dns.kube-system.svc.cluster.local valid=30s;
             set $dashboard dashboard;
 
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
