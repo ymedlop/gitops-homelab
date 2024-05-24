@@ -1,6 +1,7 @@
 micro-base:
   fullnameOverride: nginx
   runtime: nginx
+
   deployment:
     replicas: 1
     image:
@@ -21,6 +22,7 @@ micro-base:
       - name: nginx-config
         mountPath: /etc/nginx/conf.d
         configName: nginx-cm
+
   # TOOD: Configmap
   configmap:
     enabled: true
