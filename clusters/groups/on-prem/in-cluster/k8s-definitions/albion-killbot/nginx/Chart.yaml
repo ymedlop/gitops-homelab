@@ -6,7 +6,7 @@ version: 1.0.0
 
 dependencies:
   # https://ymedlop.github.io/micro-helm-charts
-  - name: micro-node-red
+  - name: micro-nodered
     version: 1.0.1
     repository: https://ymedlop.github.io/micro-helm-charts
     alias: micro-nginx
