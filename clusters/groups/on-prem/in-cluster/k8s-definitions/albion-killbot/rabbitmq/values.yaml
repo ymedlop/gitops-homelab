@@ -1,3 +1,3 @@
-rabbitmq:
-  persistence:
-    enabled: false
+# rabbitmq:
+#   persistence:
+#     enabled: false

@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: rabbitmq
+    app.kubernetes.io/instance: rabbitmq
+    app.kubernetes.io/managed-by: argocd
+    app.kubernetes.io/name: rabbitmq
+    argocd.argoproj.io/instance: in-cluster-albion-killbot-rabbitmq
+  name: rabbitmq
+spec:
+  ports:
+    - name: rabbitmq
+      port: 15672
+      protocol: TCP
+      targetPort: rabbitmq
+    - name: rabbitmq
+      port: 5672
+      protocol: TCP
+      targetPort: rabbitmq
+  selector:
+    app.kubernetes.io/component: rabbitmq
+    app.kubernetes.io/instance: rabbitmq
+    app.kubernetes.io/name: rabbitmq
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
