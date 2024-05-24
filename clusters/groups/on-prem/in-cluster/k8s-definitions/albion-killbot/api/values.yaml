@@ -9,7 +9,6 @@ micro-nodejs:
     command:
     - /bin/bash
     - -c
-    - ls
     - npm run start:api
     env:
       RABBITMQ_URL: amqp://rabbitmq
