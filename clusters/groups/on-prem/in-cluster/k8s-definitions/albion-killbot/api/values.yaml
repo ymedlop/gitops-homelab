@@ -16,6 +16,11 @@ micro-nodejs:
           secretKeyRef:
             name: discord-secrets
             key: DISCORD_TOKEN
+      - name: DISCORD_CLIENT_ID
+        valueFrom:
+          secretKeyRef:
+            name: discord-secrets
+            key: DISCORD_CLIENT_ID
       - name: RABBITMQ_URL
         value: amqp://rabbitmq
       - name: MONGODB_URL
