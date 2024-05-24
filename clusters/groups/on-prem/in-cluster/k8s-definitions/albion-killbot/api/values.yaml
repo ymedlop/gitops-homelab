@@ -1,5 +1,5 @@
 micro-nodejs:
-  fullnameOverride: crawler
+  fullnameOverride: api
   deployment:
     replicas: 1
     image:
