@@ -43,7 +43,7 @@ micro-nginx:
             add_header X-Cache-Status $upstream_cache_status;
 
             resolver kube-dns.kube-system.svc.cluster.local valid=30s;
-            set $api api.albion-killbot.svc.cluster.local;;
+            set $api api.albion-killbot.svc.cluster.local;
 
             proxy_cache akcache;
             proxy_pass http://$api;
