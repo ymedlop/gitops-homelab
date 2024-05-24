@@ -1,14 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app.kubernetes.io/component: mongodb
-    app.kubernetes.io/instance: mongodb
-    app.kubernetes.io/managed-by: argocd
-    app.kubernetes.io/name: mongodb
-    argocd.argoproj.io/instance: in-cluster-albion-killbot-mongodb
   name: mongodb
-  namespace: albion-killbot
 spec:
   replicas: 1
   selector:
