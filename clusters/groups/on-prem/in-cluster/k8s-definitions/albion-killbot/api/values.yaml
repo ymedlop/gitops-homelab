@@ -30,23 +30,15 @@ micro-nodejs:
           secretKeyRef:
             name: discord-secrets
             key: DISCORD_CLIENT_SECRET
-      - name: DISCORD_COMMUNITY_ADMINS
-        value: "187208303401500672"
-      - name: DISCORD_COMMUNITY_SERVER
-        value: "1242943818488352809"
-      - name: MAX_PLAYERS
-        value: "10"
-      - name: MAX_GUILDS
-        value: "1"
-      - name: MAX_ALLIANCES
-        value: "1"
       - name: DASHBOARD_URL
         value: https://albion-killbot-dashboard.k8scicd.local
       - name: AMQP_URL
         value: amqp://rabbitmq
       - name: MONGODB_URL
         value: mongodb://mongodb:27017/albion-killbot
-
+      - name: DEBUG_LEVEL
+        value: debug
+  
   service:
     ports:
       - name: http-80
