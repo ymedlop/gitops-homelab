@@ -3,7 +3,7 @@ micro-nodejs:
   deployment:
     replicas: 1
     image:
-      pullPolicy: IfNotPresent
+      pullPolicy: Always
       #repository: agnjunio/albion-killbot
       #tag: 4.23.3
       repository: docker.io/ymedlop/albion-killbot
