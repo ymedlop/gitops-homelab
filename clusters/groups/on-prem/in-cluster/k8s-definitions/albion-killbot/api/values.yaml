@@ -4,8 +4,10 @@ micro-nodejs:
     replicas: 1
     image:
       pullPolicy: IfNotPresent
-      repository: agnjunio/albion-killbot
-      tag: 4.23.3
+      #repository: agnjunio/albion-killbot
+      #tag: 4.23.3
+      repository: docker.io/ymedlop/albion-killbot
+      tag: latest
     ports:
       - name: http
         containerPort: 80
