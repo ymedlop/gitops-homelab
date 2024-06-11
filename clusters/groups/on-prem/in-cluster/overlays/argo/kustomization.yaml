@@ -16,3 +16,9 @@ helmCharts:
   version: 0.40.5
   valuesFile: ../../../../../base/argo-workflows/values.yaml
   releaseName: argo-workflows
+  valuesMerge: merge
+  valuesInline:
+    controller:
+      replicas: 0
+    server:
+      replicas: 0

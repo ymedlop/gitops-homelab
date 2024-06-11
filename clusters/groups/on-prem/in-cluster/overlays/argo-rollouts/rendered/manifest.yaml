@@ -15693,7 +15693,7 @@ metadata:
   name: argo-rollouts
   namespace: argo-rollouts
 spec:
-  replicas: 2
+  replicas: 0
   selector:
     matchLabels:
       app.kubernetes.io/component: rollouts-controller
@@ -15712,7 +15712,6 @@ spec:
       - args:
         - --healthzPort=8080
         - --metricsport=8090
-        - --leader-elect
         image: quay.io/argoproj/argo-rollouts:v1.6.2
         imagePullPolicy: IfNotPresent
         livenessProbe:
@@ -15759,7 +15758,7 @@ metadata:
   name: argo-rollouts-dashboard
   namespace: argo-rollouts
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app.kubernetes.io/component: rollouts-dashboard

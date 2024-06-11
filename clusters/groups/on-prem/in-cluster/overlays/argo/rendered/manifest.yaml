@@ -1721,7 +1721,7 @@ metadata:
   name: argo-workflows-server
   namespace: argo
 spec:
-  replicas: 1
+  replicas: 0
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -1805,7 +1805,7 @@ metadata:
   name: argo-workflows-workflow-controller
   namespace: argo
 spec:
-  replicas: 1
+  replicas: 0
   revisionHistoryLimit: 10
   selector:
     matchLabels:
