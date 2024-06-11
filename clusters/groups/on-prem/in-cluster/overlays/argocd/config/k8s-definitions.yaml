@@ -12,7 +12,7 @@ spec:
           repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
           revision: &branch main
           directories:
-          - path: clusters/groups/on-prem/{{name}}/*/*/*
+          - path: clusters/groups/on-prem/{{name}}/k8s-definitions/*/*
   template:
     metadata:
       name: '{{name}}-{{path[5]}}-{{path[6]}}'
