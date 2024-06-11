@@ -16,3 +16,6 @@ helmCharts:
   valuesInline:
     dashboard:
       enabled: true
+      replicas: 0
+    controller:
+      replicas: 0
