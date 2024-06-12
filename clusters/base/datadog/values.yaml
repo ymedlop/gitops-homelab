@@ -2,3 +2,9 @@ datadog:
   clusterName: k8scicd01
   apiKeyExistingSecret: datadog-secret
   site: datadoghq.eu
+
+clusterAgent:
+  admissionController:
+    enabled: true
+    mutateUnlabelled: false
+    configMode: "hostip"
