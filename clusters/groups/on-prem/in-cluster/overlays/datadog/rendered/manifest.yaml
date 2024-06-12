@@ -538,22 +538,7 @@ metadata:
 ---
 apiVersion: v1
 data:
-  api-key: PERBVEFET0dfQVBJX0tFWT4=
-kind: Secret
-metadata:
-  labels:
-    app.kubernetes.io/instance: datadog
-    app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: datadog
-    app.kubernetes.io/version: "7"
-    helm.sh/chart: datadog-2.32.4
-  name: datadog
-  namespace: datadog
-type: Opaque
----
-apiVersion: v1
-data:
-  token: UW5FYU1KMWJHYmdCeGV5cDdJRmh5STdWalhTWHlWa0s=
+  token: VDZxd3VFcTV3dVV6VWQ0WUh2S2RhR1lLbmwzcmZ0ajE=
 kind: Secret
 metadata:
   labels:
@@ -659,9 +644,8 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/api_key: 87aa4f7172ea0eb5f6b3f2c2f297517e324095ce62805d1107d494107adadf9f
         checksum/application_key: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-        checksum/clusteragent_token: 01efd7a02fe94f2227a313234168446b593e423002f9faf4a1f9bb982b4a8565
+        checksum/clusteragent_token: 86de070b2ac644e50c7879daf768ee4c739fed8c842391875d15ca4468c80d38
         checksum/install_info: 21a5f9895b9dabc64d44cf00b2302f643c3a29caca8ba44304f0cb2614fd9c62
       labels:
         app: datadog-cluster-agent
@@ -688,7 +672,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog
+              name: datadog-secret
               optional: true
         - name: DD_CLUSTER_CHECKS_ENABLED
           value: "true"
@@ -696,6 +680,8 @@ spec:
           value: kube_endpoints kube_services
         - name: DD_EXTRA_LISTENERS
           value: kube_endpoints kube_services
+        - name: DD_SITE
+          value: datadoghq.eu
         - name: DD_LOG_LEVEL
           value: INFO
         - name: DD_LEADER_ELECTION
@@ -856,10 +842,9 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/api_key: 87aa4f7172ea0eb5f6b3f2c2f297517e324095ce62805d1107d494107adadf9f
         checksum/autoconf-config: 74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b
         checksum/checksd-config: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
-        checksum/clusteragent_token: 6f2462520b9798f003f652c3cbf9b3beaef5901aeb82efaf6835360333b17d52
+        checksum/clusteragent_token: 91f4a9cff39705b9847aa60ae55a4eec7dd7a2bcbe33e30d7c42633efca71448
         checksum/confd-config: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
         checksum/install_info: 21a5f9895b9dabc64d44cf00b2302f643c3a29caca8ba44304f0cb2614fd9c62
       labels:
@@ -882,13 +867,15 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog
+              name: datadog-secret
         - name: DD_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
         - name: KUBERNETES
           value: "yes"
+        - name: DD_SITE
+          value: datadoghq.eu
         - name: DD_LOG_LEVEL
           value: INFO
         - name: DD_DOGSTATSD_PORT
@@ -986,13 +973,15 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog
+              name: datadog-secret
         - name: DD_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
         - name: KUBERNETES
           value: "yes"
+        - name: DD_SITE
+          value: datadoghq.eu
         - name: DD_CLUSTER_AGENT_ENABLED
           value: "true"
         - name: DD_CLUSTER_AGENT_KUBERNETES_SERVICE_NAME
@@ -1052,13 +1041,15 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog
+              name: datadog-secret
         - name: DD_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
         - name: KUBERNETES
           value: "yes"
+        - name: DD_SITE
+          value: datadoghq.eu
         - name: DD_CLUSTER_AGENT_ENABLED
           value: "true"
         - name: DD_CLUSTER_AGENT_KUBERNETES_SERVICE_NAME
@@ -1134,13 +1125,15 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog
+              name: datadog-secret
         - name: DD_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
         - name: KUBERNETES
           value: "yes"
+        - name: DD_SITE
+          value: datadoghq.eu
         image: gcr.io/datadoghq/agent:7.35.0
         imagePullPolicy: IfNotPresent
         name: init-config
