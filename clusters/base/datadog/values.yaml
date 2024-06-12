@@ -2,9 +2,7 @@ datadog:
   clusterName: k8scicd01
   apiKeyExistingSecret: datadog-secret
   site: datadoghq.eu
-
-clusterAgent:
-  admissionController:
+  orchestratorExplorer:
     enabled: true
-    mutateUnlabelled: false
-    configMode: "hostip"
+  processAgent:
+    enabled: true
