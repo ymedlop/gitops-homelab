@@ -1,5 +1,4 @@
 datadog:
-  clusterName: k8scicd01
   apiKeyExistingSecret: datadog-secret
   site: datadoghq.eu
   orchestratorExplorer:
