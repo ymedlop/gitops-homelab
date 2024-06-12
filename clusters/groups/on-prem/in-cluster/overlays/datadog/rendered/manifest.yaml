@@ -39,6 +39,29 @@ metadata:
   namespace: datadog
 ---
 apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    app.kubernetes.io/instance: datadog
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: datadog
+    app.kubernetes.io/version: "7"
+    helm.sh/chart: datadog-2.32.4
+  name: datadog-cluster-agent-main
+  namespace: datadog
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
@@ -237,6 +260,32 @@ rules:
   - list
   - get
   - watch
+- apiGroups:
+  - admissionregistration.k8s.io
+  resources:
+  - mutatingwebhookconfigurations
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - create
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  - cronjobs
+  verbs:
+  - get
+- apiGroups:
+  - apps
+  resources:
+  - statefulsets
+  - replicasets
+  - deployments
+  - daemonsets
+  verbs:
+  - get
 - apiGroups:
   - policy
   resourceNames:
@@ -460,6 +509,26 @@ rules:
   - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/instance: datadog
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: datadog
+    app.kubernetes.io/version: "7"
+    helm.sh/chart: datadog-2.32.4
+  name: datadog-cluster-agent-main
+  namespace: datadog
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: datadog-cluster-agent-main
+subjects:
+- kind: ServiceAccount
+  name: datadog-cluster-agent
+  namespace: datadog
+---
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   labels:
@@ -538,7 +607,7 @@ metadata:
 ---
 apiVersion: v1
 data:
-  token: RU13TEE5c05yV3o0WFl4RnU2V1F5TFByeWRoUlB1MlU=
+  token: VHY4eTRHM3NpVDJWR21nY1NHRDY0d1d0WndlNGpBNWc=
 kind: Secret
 metadata:
   labels:
@@ -599,6 +668,28 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    app: datadog
+    app.kubernetes.io/instance: datadog
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: datadog
+    app.kubernetes.io/version: "7"
+    chart: datadog-2.32.4
+    helm.sh/chart: datadog-2.32.4
+    heritage: Helm
+    release: datadog
+  name: datadog-cluster-agent-admission-controller
+  namespace: datadog
+spec:
+  ports:
+  - port: 443
+    targetPort: 8000
+  selector:
+    app: datadog-cluster-agent
+---
+apiVersion: v1
+kind: Service
+metadata:
   annotations:
     prometheus.io/scrape: "true"
   labels:
@@ -645,7 +736,7 @@ spec:
     metadata:
       annotations:
         checksum/application_key: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-        checksum/clusteragent_token: 82ce46c5bb2369d8998707f07a4a05c947a220cea0d01dda3e43f986333f5408
+        checksum/clusteragent_token: c7f14df5bd8de6922f0342d6ba044de87b792cd06fb4b1479a8a2258b55e91f8
         checksum/install_info: 21a5f9895b9dabc64d44cf00b2302f643c3a29caca8ba44304f0cb2614fd9c62
       labels:
         app: datadog-cluster-agent
@@ -674,6 +765,12 @@ spec:
               key: api-key
               name: datadog-secret
               optional: true
+        - name: DD_ADMISSION_CONTROLLER_ENABLED
+          value: "true"
+        - name: DD_ADMISSION_CONTROLLER_MUTATE_UNLABELLED
+          value: "false"
+        - name: DD_ADMISSION_CONTROLLER_SERVICE_NAME
+          value: datadog-cluster-agent-admission-controller
         - name: DD_CLUSTER_CHECKS_ENABLED
           value: "true"
         - name: DD_EXTRA_CONFIG_PROVIDERS
@@ -846,7 +943,7 @@ spec:
       annotations:
         checksum/autoconf-config: 74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b
         checksum/checksd-config: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
-        checksum/clusteragent_token: b8ba8f6900df6bb44fa739de1c9762121c92f9387648ca4b4e1ccdbb39e3ee9a
+        checksum/clusteragent_token: 66a6a09627ae9889f3553720e23bb2d0b44ff0baf2fa80b291e3edb202877536
         checksum/confd-config: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
         checksum/install_info: 21a5f9895b9dabc64d44cf00b2302f643c3a29caca8ba44304f0cb2614fd9c62
       labels:
