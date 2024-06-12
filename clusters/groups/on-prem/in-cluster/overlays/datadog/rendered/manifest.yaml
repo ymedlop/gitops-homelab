@@ -538,7 +538,22 @@ metadata:
 ---
 apiVersion: v1
 data:
-  token: cE95MTg5eDFTMFJaT3AyQVJ2SDNRcndwNUR6VzlFN24=
+  api-key: PERBVEFET0dfQVBJX0tFWT4=
+kind: Secret
+metadata:
+  labels:
+    app.kubernetes.io/instance: datadog
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: datadog
+    app.kubernetes.io/version: "7"
+    helm.sh/chart: datadog-2.32.4
+  name: datadog
+  namespace: datadog
+type: Opaque
+---
+apiVersion: v1
+data:
+  token: Y3VISk1yd21OUjRzRUlKZ0txQm1KRnE3T3FDUDdjTjc=
 kind: Secret
 metadata:
   labels:
@@ -644,8 +659,9 @@ spec:
   template:
     metadata:
       annotations:
+        checksum/api_key: 87aa4f7172ea0eb5f6b3f2c2f297517e324095ce62805d1107d494107adadf9f
         checksum/application_key: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-        checksum/clusteragent_token: 33667781ab80d5340f148ff1eb06df28b6a8484b8d192ef3a38f3edc7a06ea22
+        checksum/clusteragent_token: f3e0f15b3731e049ed1ab9513cb52fad41073bb2319f359c441b5d578972ded2
         checksum/install_info: 21a5f9895b9dabc64d44cf00b2302f643c3a29caca8ba44304f0cb2614fd9c62
       labels:
         app: datadog-cluster-agent
@@ -672,7 +688,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog-secret
+              name: datadog
               optional: true
         - name: DD_CLUSTER_CHECKS_ENABLED
           value: "true"
@@ -840,9 +856,10 @@ spec:
   template:
     metadata:
       annotations:
+        checksum/api_key: 87aa4f7172ea0eb5f6b3f2c2f297517e324095ce62805d1107d494107adadf9f
         checksum/autoconf-config: 74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b
         checksum/checksd-config: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
-        checksum/clusteragent_token: 61833be122064f1553092ad7f2ca3c8576a35d926a5258ef98778e52dcb005ff
+        checksum/clusteragent_token: ecd0b38248dd0921a061e1f51568eb35e267d1dc49c9e0999bc405d7298874a6
         checksum/confd-config: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
         checksum/install_info: 21a5f9895b9dabc64d44cf00b2302f643c3a29caca8ba44304f0cb2614fd9c62
       labels:
@@ -865,7 +882,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog-secret
+              name: datadog
         - name: DD_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
@@ -969,7 +986,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog-secret
+              name: datadog
         - name: DD_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
@@ -1035,7 +1052,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog-secret
+              name: datadog
         - name: DD_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
@@ -1117,7 +1134,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: api-key
-              name: datadog-secret
+              name: datadog
         - name: DD_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
