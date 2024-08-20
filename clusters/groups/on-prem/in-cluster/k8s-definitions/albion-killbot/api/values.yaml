@@ -37,7 +37,10 @@ micro-nodejs:
       - name: AMQP_URL
         value: amqp://rabbitmq
       - name: MONGODB_URL
-        value: mongodb://mongodb:27017/albion-killbot
+        valueFrom:
+          secretKeyRef:
+            name: mongodb-secrets
+            key: MONGODB_URL
       - name: DEBUG_LEVEL
         value: debug
   
