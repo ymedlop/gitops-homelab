@@ -5,7 +5,7 @@ micro-nodejs:
     image:
       pullPolicy: IfNotPresent
       repository: agnjunio/albion-killbot
-      tag: 4.23.3
+      tag: 4.23.9
     command:
     - /bin/bash
     - -c

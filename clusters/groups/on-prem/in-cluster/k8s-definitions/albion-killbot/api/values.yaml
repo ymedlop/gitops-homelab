@@ -3,11 +3,9 @@ micro-nodejs:
   deployment:
     replicas: 1
     image:
-      pullPolicy: Always
-      #repository: agnjunio/albion-killbot
-      #tag: 4.23.3
-      repository: docker.io/ymedlop/albion-killbot
-      tag: latest
+      pullPolicy: IfNotPresent
+      repository: agnjunio/albion-killbot
+      tag: 4.23.9
     ports:
       - name: http
         containerPort: 80
