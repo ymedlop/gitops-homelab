@@ -15,16 +15,12 @@ This is a personal project to set a Kubernetes RPi cluster to provide me a priva
 ## Getting started
 For every RPi that we going to have in our cluster. We have to follow these steps:
 
-### Choose your Cluster node names
-I recommend you follow some kind of nomenclature in your nodes naming. It'll be helpful later when you are working with your cluster.
-Because of the high availability feature with an embedded DB is experimental. I decided only to use one Master node in my cluster.
-
 ### Flash SD Card
 * Download [Raspberry Pi Imager][(https://www.raspberrypi.org/downloads/raspbian](https://www.raspberrypi.com/software/)/)
 * Open Raspberry Pi Imager
 * Choose your device, SO (Raspberry Pi Os Lite (64-bit) and storage device
 * Configure on settings the following parameters:
-  * hostname  
+  * hostname (I recommend you follow some kind of nomenclature in your nodes naming. It'll be helpful later when you are working with your cluster).
   * User and password
   * Wifi configuration
   * Enable SSH
