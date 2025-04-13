@@ -20,7 +20,6 @@ For every RPi that we going to have in our cluster. We have to follow these step
 ### Choose your Cluster node names
 I recommend you follow some kind of nomenclature in your nodes naming. It'll be helpful later when you are working with your cluster.
 Because of the high availability feature with an embedded DB is experimental. I decided only to use one Master node in my cluster.
-![PAASMONKEYS](images/cluster.png)
 
 ### Flash SD Card
 * Download [Raspberry Pi Imager][(https://www.raspberrypi.org/downloads/raspbian](https://www.raspberrypi.com/software/)/)
@@ -36,78 +35,10 @@ Because of the high availability feature with an embedded DB is experimental. I 
 ### Customize the Raspberry
 Insert the SD card and turn on your RPi. It will be accessible on your network over ssh using the following command:
 ```
-ssh pi@raspberrypi.local
+ssh myuser@myraspberryhostname.local
 ```
-Log in with the password "raspberry" and then type:
+Example:
 ```
-sudo raspi-config
-```
-Do the following actions:
-* Set the GPU memory split to 16mb
-* Set the hostname
-* Change the password for the pi user
-
-#### Set static IP
-```
-ifconfig | grep -i inet
-sudo nano /etc/dhcpcd.conf
-```
-Add to end of this file:
-```
-interface eth0
-static ip_address=192.168.2.xxx/24
-static routers=192.168.2.1
-static domain_name_servers=192.168.2.1
-```
-#### Enable container features
-edit /boot/cmdline.txt 
-```
-sudo nano /boot/cmdline.txt
-```
-and add the following to the end of the line:
-```
-cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory
-```
-Now reboot the device:
-```
-sudo shutdown -r now
+ssh ymedlop@k8s-pi-01.local
 ```
 
-#### Add your ssh key
-Copy public key to the RPi
-```
-ssh-copy-id pi@k3s-paasmonkey-n0x.local
-```
-Now you can rely on your public key to log into each RPi without typing a password in.
-
-## Create the cluster
-Because of the high availability feature with an embedded DB is experimental. I decided only to use one Master node in my cluster.
-
-### Set the Master
-SSH to you our RPi Master
-```
-ssh pi@k3s-paasmonkey-m01.local
-```
-Install our Master node in our RPi
-```
-export SERVER_IP=192.168.2.120
-export USER=pi
-k3sup install --ip $SERVER_IP --user $USER
-```
-
-### Join Node
-SSH to our RPi Master
-```
-ssh pi@k3s-paasmonkey-m01.local
-```
-Copy public key to the Node
-```
-ssh-copy-id pi@k3s-paasmonkey-n0x.local
-```
-Join RPi Node to the RPiCluster
-```
-export AGENT_IP=192.168.2.xxx
-export SERVER_IP=192.168.2.120
-export USER=pi
-k3sup join --ip $AGENT_IP --server-ip $SERVER_IP --user $USER
-```
