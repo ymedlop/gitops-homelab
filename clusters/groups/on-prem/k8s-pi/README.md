@@ -33,6 +33,6 @@ ssh myuser@myraspberryhostname.local
 ```
 Example:
 ```
-ssh ymedlop@k8s-pi-01.local
+ssh ymedlop@k3spi-01.local
 ```
 
