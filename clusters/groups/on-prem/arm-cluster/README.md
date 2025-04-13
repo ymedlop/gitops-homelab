@@ -27,6 +27,7 @@ Because of the high availability feature with an embedded DB is experimental. I 
 * Open Raspberry Pi Imager
 * Choose your device, SO (Raspberry Pi Os Lite (64-bit) and storage device
 * Configure on settings the following parameters:
+  * hostname  
   * User and password
   * Wifi configuration
   * Enable SSH
