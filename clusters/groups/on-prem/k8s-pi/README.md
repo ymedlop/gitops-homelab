@@ -8,11 +8,11 @@ This is a personal project to set a Kubernetes RPi cluster to provide me a priva
 ## Prerequisites
 <img align="right" width="100" height="100" src="images/cluster-draft.jpg">
 
-* 6 SD card 32GB like [SanDisk 32GB ULTRA microSDHC Card Class 10](https://www.amazon.com/gp/product/B007JTKLEK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B007JTKLEK&linkCode=as2&tag=alexellisuk-20&linkId=72069d86b6c70e1dc49c2f0ce35f08ef)
+* 6 SD card 32GB
 * 6 RPi 3b+ (1 Masters and 5 Worker)
 * 8-way USB Power-supply
 * 6 Micro-USB cables
-* RPi 3B+,4B Cluster case like [8 Slot Cluster Cloud](https://www.ebay.de/itm/8-Slot-Cluster-Cloud-For-Raspberry-Pi-4B-3B-and-other-single-board-computers/123315692330?hash=item1cb630232a:m:mgb2CCUuG3V2u1RKG3BDyGg&var=423715705189)
+* RPi 3B+,4B Case Tower
 
 ## Getting started
 For every RPi that we going to have in our cluster. We have to follow these steps:
