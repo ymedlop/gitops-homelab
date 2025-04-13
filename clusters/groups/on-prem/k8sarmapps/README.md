@@ -23,8 +23,8 @@ Because of the high availability feature with an embedded DB is experimental. I 
 ![PAASMONKEYS](images/cluster.png)
 
 ### Flash SD Card
-* Download [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/)
-* Flash SD card using [Etcher](https://www.balena.io/etcher/)
+* Download [Raspberry Pi Imager][(https://www.raspberrypi.org/downloads/raspbian](https://www.raspberrypi.com/software/)/)
+* Flash SD card using Raspberry Pi Imager (Raspberry Pi Os Lite (64-bit)
 * Mount the SD card and create a text file named "ssh" in the boot partition.
 
 ### Customize the Raspberry
