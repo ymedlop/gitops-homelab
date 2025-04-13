@@ -24,8 +24,13 @@ Because of the high availability feature with an embedded DB is experimental. I 
 
 ### Flash SD Card
 * Download [Raspberry Pi Imager][(https://www.raspberrypi.org/downloads/raspbian](https://www.raspberrypi.com/software/)/)
-* Flash SD card using Raspberry Pi Imager (Raspberry Pi Os Lite (64-bit)
-* Mount the SD card and create a text file named "ssh" in the boot partition.
+* Open Raspberry Pi Imager
+* Choose your device, SO (Raspberry Pi Os Lite (64-bit) and storage device
+* Configure on settings the following parameters:
+  * User and password
+  * Wifi configuration
+  * Enable SSH
+* Flash the SD Card
 
 ### Customize the Raspberry
 Insert the SD card and turn on your RPi. It will be accessible on your network over ssh using the following command:
