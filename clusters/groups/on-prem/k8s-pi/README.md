@@ -6,8 +6,6 @@ This is a personal project to set a Kubernetes RPi cluster to provide me a priva
 [K3S](https://k3s.io/) is a highly available, certified Kubernetes distribution designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances. Both ARM64 and ARMv7 are supported with binaries and multiarch images available for both.
 
 ## Prerequisites
-<img align="right" width="100" height="100" src="images/cluster-draft.jpg">
-
 * 6 SD card 32GB
 * 6 RPi 3b+ (1 Masters and 5 Worker)
 * 8-way USB Power-supply
