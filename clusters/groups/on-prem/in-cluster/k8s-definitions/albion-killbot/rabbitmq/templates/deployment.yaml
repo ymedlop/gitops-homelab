@@ -9,7 +9,7 @@ metadata:
     argocd.argoproj.io/instance: in-cluster-albion-killbot-rabbitmq
   name: rabbitmq
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app.kubernetes.io/name: rabbitmq

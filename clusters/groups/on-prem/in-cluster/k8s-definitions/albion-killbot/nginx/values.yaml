@@ -1,7 +1,7 @@
 micro-nginx:
   fullnameOverride: nginx
   deployment:
-    replicas: 1
+    replicas: 0
     image:
       pullPolicy: IfNotPresent
       repository: nginx
@@ -21,7 +21,6 @@ micro-nginx:
     volumeMounts:
       - name: nginx-config
         mountPath: /etc/nginx/conf.d
-
   configmap:
     name: nginx-cm
     data:
@@ -58,7 +57,6 @@ micro-nginx:
             proxy_set_header Connection "Upgrade";
           }
         }
-
   service:
     ports:
       - name: http-80

@@ -1,7 +1,7 @@
 micro-nodejs:
   fullnameOverride: dashboard
   deployment:
-    replicas: 1
+    replicas: 0
     image:
       pullPolicy: IfNotPresent
       repository: ymedlop/albion-killbot-dashboard
@@ -22,7 +22,6 @@ micro-nodejs:
         secretKeyRef:
           name: discord-secrets
           key: DISCORD_CLIENT_ID
-
   service:
     ports:
       - name: http-80

@@ -3,9 +3,3 @@ name: definitions
 description: definitions
 type: application
 version: 1.0.0
-
-# dependencies:
-#   # https://artifacthub.io/packages/helm/bitnami/rabbitmq
-#   - name: rabbitmq
-#     version: 14.3.0
-#     repository: https://charts.bitnami.com/bitnami

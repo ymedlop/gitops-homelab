@@ -1,7 +1,7 @@
 micro-nodejs:
   fullnameOverride: api
   deployment:
-    replicas: 1
+    replicas: 0
     image:
       pullPolicy: IfNotPresent
       repository: agnjunio/albion-killbot
@@ -41,7 +41,6 @@ micro-nodejs:
             key: MONGODB_URL
       - name: DEBUG_LEVEL
         value: debug
-  
   service:
     ports:
       - name: http-80
