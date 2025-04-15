@@ -145,8 +145,8 @@ spec:
         ##
         ## Configuring etcdctl inside the container to connect to the etcd node
         ## in the container reduces confusion when debugging.
-        - name: ETCDCTL_ENDPOINTS
-          value: $(HOSTNAME).$(SERVICE_NAME):2379
+        # - name: ETCDCTL_ENDPOINTS
+        #   value: $(HOSTNAME).$(SERVICE_NAME):2379
         ##
         ## TLS client configuration for etcdctl in the container.
         ## These files paths are part of the "etcd-client-certs" volume mount.
@@ -209,7 +209,8 @@ spec:
         ## replicas configured. When combined, these are a little hard to read.
         ## Here is what a single parameterized peer looks like:
         ##   etcd-0=$(URI_SCHEME)://etcd-0.$(SERVICE_NAME):2380
-        - --initial-cluster=etcd-0=$(URI_SCHEME)://etcd-0.$(SERVICE_NAME):2380,etcd-1=$(URI_SCHEME)://etcd-1.$(SERVICE_NAME):2380,etcd-2=$(URI_SCHEME)://etcd-2.$(SERVICE_NAME):2380
+        ## - --initial-cluster=etcd-0=$(URI_SCHEME)://etcd-0.$(SERVICE_NAME):2380,etcd-1=$(URI_SCHEME)://etcd-1.$(SERVICE_NAME):2380,etcd-2=$(URI_SCHEME)://etcd-2.$(SERVICE_NAME):2380
+        - --initial-cluster=etcd-0=$(URI_SCHEME)://etcd-0.$(SERVICE_NAME):2380
         ##
         ## The peer urls flag should be fine as-is.
         - --initial-advertise-peer-urls=$(URI_SCHEME)://$(HOSTNAME).$(SERVICE_NAME):2380
