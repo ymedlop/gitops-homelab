@@ -12,6 +12,6 @@ helmCharts:
 # https://artifacthub.io/packages/helm/argo/argo-cd
 - name: micro-nginx
   version: 1.0.6
-  repository: https://ymedlop.github.io/micro-helm-charts
+  repo: https://ymedlop.github.io/micro-helm-charts
   valuesFile: values.yaml
   releaseName: nginx
