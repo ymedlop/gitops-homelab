@@ -3,5 +3,7 @@ kind: Kustomization
 namespace: etcd-pi
 
 resources:
+- certificates.yaml
+- issuer.yaml
 - service.yaml
 - statefulset.yaml
