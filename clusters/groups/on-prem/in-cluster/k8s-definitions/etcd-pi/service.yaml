@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -15,3 +16,19 @@ spec:
     port: 2380
   - name: etcd-metrics
     port: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcd-lb
+  labels:
+    app: etcd
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 2379
+      targetPort: 2379
+      protocol: TCP
+      name: client
+  selector:
+    app: etcd
