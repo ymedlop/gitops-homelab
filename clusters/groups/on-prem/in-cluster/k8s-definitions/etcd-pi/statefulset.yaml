@@ -68,6 +68,7 @@ spec:
         - --listen-metrics-urls=http://0.0.0.0:8080
         - --advertise-client-urls=$(URI_SCHEME)://$(HOSTNAME).$(SERVICE_NAME):2379
         - --initial-cluster=etcd-0=$(URI_SCHEME)://etcd-0.$(SERVICE_NAME):2380
+        # TOOD: get more Nodes to run ETCD in HA
         # - --initial-cluster=etcd-0=$(URI_SCHEME)://etcd-0.$(SERVICE_NAME):2380,etcd-1=$(URI_SCHEME)://etcd-1.$(SERVICE_NAME):2380,etcd-2=$(URI_SCHEME)://etcd-2.$(SERVICE_NAME):2380
         - --initial-cluster-state=new
         - --initial-cluster-token=etcd-cluster
