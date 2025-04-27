@@ -9,6 +9,7 @@ spec:
     kind: ClusterIssuer
   commonName: etcd
   dnsNames:
+  - etcd.k8scicd.local
   - etcd
   - etcd.default
   - etcd.default.svc.cluster.local
@@ -39,6 +40,7 @@ spec:
     kind: ClusterIssuer
   commonName: etcd
   dnsNames:
+  - etcd.k8scicd.local
   - etcd
   - etcd.default
   - etcd.default.svc.cluster.local
