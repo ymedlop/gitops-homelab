@@ -22,3 +22,15 @@ helmCharts:
     server:
       extraArgs:
       - --insecure
+    configs:
+      cm:
+        dex.config: |
+          connectors:
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: Ov23liLcbPQqSK4quiX4
+              clientSecret: $dex.github.clientSecret
+              orgs:
+              - name: ymedlop
