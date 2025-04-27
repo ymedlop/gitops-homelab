@@ -24,6 +24,7 @@ helmCharts:
       - --insecure
     configs:
       cm:
+        url: https://argocd.k8scicd.local
         dex.config: |
           connectors:
           - type: github
