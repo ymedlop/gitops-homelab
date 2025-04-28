@@ -32,10 +32,10 @@ application setting should be configured in Git - no manual configurations.
 Time to check our deployment repository. As you can expect it contains deployment manifests of cluster addons. The manifests are located in `clusters/base` directory:
 
 ```
-clusters/base
-├── argo
-├── argo-rollouts
-└── argocd
+clusters/addons
+├── argocd
+├── cert-manager
+└── ...
 ```
 
 Each directory represents a single application. The typical recommendation to application developers is to leverage Argo CD and manually create Argo CD Application CR per directory.
@@ -52,7 +52,7 @@ clusters/groups
 └── <cloud-provider>
     └── <environment>
         └── <cluster>
-            └── overlays
+            └── addons
                 ├── <addons-1>
                 └── <addons-2>
 ```
@@ -64,7 +64,7 @@ For my current homelab I will avoid the environment level because does it not ha
 clusters/groups
 └── on-prem
     └── in-cluster
-        └── overlays
+        └── addons
             ├── argo
             └── argo-rollouts
             └── argocd
