@@ -13,12 +13,12 @@ helmCharts:
   includeCRDs: true
   repo: https://istio-release.storage.googleapis.com/charts/
   version: 1.25.1
-  # valuesFile: ../../../../../base/istio-system/values.yaml
+  # valuesFile: ../../../../../addons/istio-system/values.yaml
   releaseName: base
 # https://artifacthub.io/packages/helm/istio-official/istiod
 - name: istiod
   namespace: istio-system
   repo: https://istio-release.storage.googleapis.com/charts/
   version: 1.25.1
-  valuesFile: ../../../../../base/istio-system/values.yaml
+  valuesFile: ../../../../../addons/istio-system/values.yaml
   releaseName: istiod

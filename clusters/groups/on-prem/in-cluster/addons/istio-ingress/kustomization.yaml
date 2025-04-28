@@ -33,6 +33,6 @@ helmCharts:
         targetPort: 80
 
 resources:
-- ../../../../../base/istio-ingress
+- ../../../../../addons/istio-ingress
 - certificate.yaml
 - global-gateway.yaml

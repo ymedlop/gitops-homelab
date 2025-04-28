@@ -12,8 +12,8 @@ spec:
           repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
           revision: &branch main
           directories:
-          - path: clusters/groups/on-prem/{{name}}/overlays/*
-          - path: clusters/groups/on-prem/in-cluster/overlays/argocd
+          - path: clusters/groups/on-prem/{{name}}/addons/*
+          - path: clusters/groups/on-prem/in-cluster/addons/argocd
             exclude: true
   template:
     metadata:

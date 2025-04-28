@@ -10,7 +10,7 @@ helmCharts:
 - name: datadog
   repo: https://helm.datadoghq.com
   version: 3.66.0
-  valuesFile: ../../../../../base/datadog/values.yaml
+  valuesFile: ../../../../../addons/datadog/values.yaml
   releaseName: datadog
   valuesMerge: merge
   valuesInline:

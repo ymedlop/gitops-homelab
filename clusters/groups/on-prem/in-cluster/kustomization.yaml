@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- overlays/argocd
+- addons/argocd
