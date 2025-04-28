@@ -19,9 +19,6 @@ helmCharts:
   includeCRDs: true
   valuesMerge: merge
   valuesInline:
-    server:
-      extraArgs:
-      - --insecure
     configs:
       cm:
         url: https://argocd.k8scicd.local
@@ -32,6 +29,10 @@ helmCharts:
             name: GitHub
             config:
               clientID: Ov23liLcbPQqSK4quiX4
-              clientSecret: $dex.github.clientSecret
-              orgs:
-              - name: ymedlop
+              clientSecret: $dex-github-secret:dex.github.clientSecret
+      rbac:
+        create: true
+        policy: |
+          g, ymedlop@gmail.com, role:admin
+        policy.default: role:readonly
+        scopes: '[groups, email]'

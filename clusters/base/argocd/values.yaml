@@ -2,7 +2,11 @@ configs:
   cm:
     # Build options/parameters to use with `kustomize build` (optional)
     kustomize.buildOptions: --enable-helm --load-restrictor LoadRestrictionsNone
-
+    admin.enabled: 'true'
+    exec.enabled: 'true'
+    application.resourceTrackingMethod: annotation
 server:
   extensions:
     enabled: true
+  extraArgs:
+  - --insecure
