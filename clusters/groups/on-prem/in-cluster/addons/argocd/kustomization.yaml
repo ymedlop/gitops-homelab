@@ -21,7 +21,9 @@ helmCharts:
   valuesInline:
     configs:
       cm:
+        application.resourceTrackingMethod: annotation
         url: https://argocd.k8scicd.local
+        accounts.argo-mcp: apiKey, login
         dex.config: |
           connectors:
           - type: github
@@ -34,5 +36,6 @@ helmCharts:
         create: true
         policy: |
           g, ymedlop@gmail.com, role:admin
+          g, argo-mcp, role:admin
         policy.default: role:readonly
         scopes: '[groups, email]'
