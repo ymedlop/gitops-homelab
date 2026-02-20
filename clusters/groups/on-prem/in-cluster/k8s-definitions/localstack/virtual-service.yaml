@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: localstack-virtualservice
+spec:
+  gateways:
+    - istio-ingress/global-gateway
+  hosts:
+    - localstack.k8scicd.local
+  http:
+    - route:
+      - destination:
+          host: localstack
+          port:
+            number: 4566
