@@ -9,7 +9,7 @@ helmCharts:
 # https://artifacthub.io/packages/helm/datadog/datadog
 - name: datadog
   repo: https://helm.datadoghq.com
-  version: 3.66.0
+  version: 3.174.0
   valuesFile: ../../../../../addons/datadog/values.yaml
   releaseName: datadog
   valuesMerge: merge
