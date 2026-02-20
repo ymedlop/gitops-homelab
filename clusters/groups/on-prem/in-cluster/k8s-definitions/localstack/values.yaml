@@ -13,4 +13,4 @@ localstack:
         name: localstack-auth-token
         key: localstack-api-key
   ingress:
-  enabled: true
+    enabled: true
