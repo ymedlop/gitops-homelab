@@ -1,0 +1,14 @@
+localstack:
+  resources:
+    requests:
+      cpu: 1
+      memory: 1Gi
+    limits:
+      cpu: 2
+      memory: 2Gi
+  extraEnvVars:
+  - name: LOCALSTACK_AUTH_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: localstack-auth-token
+        key: localstack-api-key
