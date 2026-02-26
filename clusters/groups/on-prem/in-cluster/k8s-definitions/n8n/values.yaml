@@ -1,7 +1,6 @@
-n8n:
-  persistence:
-    enabled: false
-    size: 5Gi
-    accessModes:
-      - ReadWriteOnce
-    storageClass: default
+persistence:
+  enabled: true
+  size: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClass: default
