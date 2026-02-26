@@ -12,7 +12,7 @@ helmCharts:
 # https://artifacthub.io/packages/helm/community-charts/n8n
 - name: n8n
   repo: https://community-charts.github.io/helm-charts
-  version: 0.6.27
+  version: 1.16.29
   valuesFile: values.yaml
   releaseName: n8n
   includeCRDs: true
