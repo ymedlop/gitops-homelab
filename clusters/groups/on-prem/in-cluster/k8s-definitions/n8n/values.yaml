@@ -1,6 +1,6 @@
 n8n:
   persistence:
-    enabled: true
+    enabled: false
     size: 5Gi
     accessModes:
       - ReadWriteOnce
