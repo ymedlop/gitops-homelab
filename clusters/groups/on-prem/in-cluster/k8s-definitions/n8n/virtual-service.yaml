@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: n8n-virtualservice
+spec:
+  gateways:
+    - istio-ingress/global-gateway
+  hosts:
+    - n8n.k8scicd.local
+  http:
+    - route:
+      - destination:
+          host: localstack
+          port:
+            number: 5678
