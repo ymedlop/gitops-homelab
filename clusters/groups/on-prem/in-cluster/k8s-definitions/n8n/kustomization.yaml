@@ -10,15 +10,15 @@ helmGlobals:
 
 helmCharts:
 # https://artifacthub.io/packages/helm/community-charts/n8n
-# - name: n8n
-#   repo: https://community-charts.github.io/helm-charts
-#   version: 1.16.29
-#   valuesInline:
-#     persistence:          
-#       enabled: true
-#       size: 5Gi
-#       accessModes:
-#         - ReadWriteOnce
-#       storageClass: default
-#   releaseName: n8n
-#   includeCRDs: true
+- name: n8n
+  repo: https://community-charts.github.io/helm-charts
+  version: 1.16.29
+  valuesInline:
+    persistence:          
+      enabled: true
+      size: 5Gi
+      accessModes:
+        - ReadWriteOnce
+      storageClass: default
+  releaseName: n8n
+  includeCRDs: true
