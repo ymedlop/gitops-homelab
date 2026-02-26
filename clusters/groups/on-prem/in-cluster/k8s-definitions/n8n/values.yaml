@@ -1,6 +1,0 @@
-persistence:
-  enabled: true
-  size: 5Gi
-  accessModes:
-    - ReadWriteOnce
-  storageClass: default

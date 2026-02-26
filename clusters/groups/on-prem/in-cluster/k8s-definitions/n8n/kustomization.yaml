@@ -13,6 +13,12 @@ helmCharts:
 - name: n8n
   repo: https://community-charts.github.io/helm-charts
   version: 1.16.29
-  valuesFile: values.yaml
+  valuesInline:
+    persistence:          
+      enabled: true
+      size: 5Gi
+      accessModes:
+        - ReadWriteOnce
+      storageClass: default
   releaseName: n8n
   includeCRDs: true
