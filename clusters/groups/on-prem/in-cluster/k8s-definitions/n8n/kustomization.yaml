@@ -21,4 +21,3 @@ helmCharts:
         - ReadWriteOnce
       storageClass: default
   releaseName: n8n
-  includeCRDs: true
