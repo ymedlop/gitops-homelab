@@ -1,3 +1,3 @@
-# K8S Defiitions
+# K8S Definitions
 
 Kubernetes manifest definitions per namespace
