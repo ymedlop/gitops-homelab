@@ -4,7 +4,7 @@ metadata:
   name: etcd
 spec:
   serviceName: etcd
-  replicas: 0
+  replicas: 1
   podManagementPolicy: Parallel
   updateStrategy:
     type: RollingUpdate
