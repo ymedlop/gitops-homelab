@@ -69,7 +69,3 @@ clusters/groups
             └── argo-rollouts
             └── argocd
 ```
-
-I going to use an Old Mac Mini to have a CICD Cluster to allow me to use and lear about the the whole Argo Project.
-
-<img width="50%" height="50%" src="images/k8scicd01.jpg" style="display: block; margin: 0 auto" alt="CICD Cluster">
