@@ -20,3 +20,15 @@ spec:
     name: web
     port: 8000
     protocol: HTTP
+  - name: websecure
+    port: 443
+    protocol: HTTPS
+    allowedRoutes:
+      namespaces:
+        from: All
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: traefik-gtw-tls
+        kind: Secret
+        group: ""
