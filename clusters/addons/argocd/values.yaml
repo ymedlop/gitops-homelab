@@ -4,7 +4,6 @@ configs:
     kustomize.buildOptions: --enable-helm --load-restrictor LoadRestrictionsNone
     admin.enabled: 'true'
     exec.enabled: 'true'
-    application.resourceTrackingMethod: annotation
 server:
   extensions:
     enabled: true
