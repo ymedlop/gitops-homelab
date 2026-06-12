@@ -9,7 +9,7 @@ spec:
       generators:
       - clusters: {}
       - git:
-          repoURL: &repo https://github.com/ymedlop/argocd-clusters-management.git
+          repoURL: &repo https://github.com/ymedlop/gitops-homelab.git
           revision: &branch main
           directories:
           - path: clusters/groups/on-prem/{{name}}/k8s-definitions/*
