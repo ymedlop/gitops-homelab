@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: n8n
 
 resources:
-- virtual-service.yaml
 
 helmGlobals:
  chartHome: ../../../../../charts
