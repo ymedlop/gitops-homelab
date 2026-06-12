@@ -14,9 +14,10 @@ helmCharts:
   valuesInline:
     nfs:
       server: 192.168.1.62
-      path: /volume1/k3s
+      path: /volume1/k3shomelab
+      mountOptions:
+        - nfsvers=3
     storageClass:
       create: true
       name: ugreen-nfs
       defaultClass: false
-    replicaCount: 1
