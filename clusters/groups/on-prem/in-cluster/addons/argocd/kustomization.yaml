@@ -20,6 +20,10 @@ helmCharts:
   valuesMerge: merge
   valuesInline:
     configs:
+      server:
+       insecure: true
+       service:
+        servicePortHttpsAppProtocol: kubernetes.io/h2c
       cm:
         application.resourceTrackingMethod: annotation
         url: https://argocd.k8scicd.local
