@@ -13,4 +13,4 @@ helmCharts:
 - name: n8n
   releaseName: n8n
   repo: https://community-charts.github.io/helm-charts
-  version: 1.16.29
+  version: 1.22.2
