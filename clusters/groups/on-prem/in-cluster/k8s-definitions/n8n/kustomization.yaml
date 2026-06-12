@@ -13,3 +13,5 @@ helmCharts:
   releaseName: n8n
   repo: https://community-charts.github.io/helm-charts
   version: 1.22.2
+  valuesInline:
+   replicas: 0
