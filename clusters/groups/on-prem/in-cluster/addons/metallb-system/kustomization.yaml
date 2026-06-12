@@ -11,6 +11,9 @@ helmCharts:
   repo: https://metallb.github.io/metallb
   version: 0.16.1
   valuesFile: ../../../../../addons/metallb-system/values.yaml
+  valuesInline:
+    nodeSelector:
+      kubernetes.io/hostname: k3s-gengar
   releaseName: metallb
 
 resources:
