@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: traefik-gtw-tls
   dnsNames:
-  - *.homelab.local
+  - "*.homelab.local"
   issuerRef:
     name: letsencrypt
     kind: ClusterIssuer
