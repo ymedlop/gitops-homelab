@@ -17,12 +17,12 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: traefik-gtw-tls
+  name: argocd-gtw-tls
   namespace: kube-system
 spec:
-  secretName: traefik-gtw-tls
+  secretName: argocd-gtw-tls
   dnsNames:
-  - "*.homelab.local"
+  - "argocd.homelab.local"
   issuerRef:
     name: letsencrypt
     kind: ClusterIssuer
