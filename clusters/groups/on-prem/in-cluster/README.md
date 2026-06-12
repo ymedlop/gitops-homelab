@@ -1,4 +1,4 @@
-# CICD Bare metal Cluster
+# K3s Bare metal Cluster
 
 Kubernetes Bare metal Cluster created using the following [manual](https://askcloudarchitech.com/posts/tutorials/create-kubernetes-cluster-from-old-computers/).
 
