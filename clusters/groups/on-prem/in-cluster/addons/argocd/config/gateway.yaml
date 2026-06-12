@@ -1,0 +1,37 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: argocd-http-route
+  namespace: argocd
+spec:
+  parentRefs:
+  - name: cluster-gateway
+    namespace: gateway
+    sectionName: https
+  hostnames:
+  - argocd.homelab.local
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: argocd-server
+      port: 80
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: GRPCRoute
+metadata:
+  name: argocd-grpc-route
+  namespace: argocd
+spec:
+  parentRefs:
+  - name: cluster-gateway
+    namespace: gateway
+    sectionName: https
+  hostnames:
+  - grpc.argocd.homelab.local
+  rules:
+  - backendRefs:
+    - name: argocd-server
+      port: 443
