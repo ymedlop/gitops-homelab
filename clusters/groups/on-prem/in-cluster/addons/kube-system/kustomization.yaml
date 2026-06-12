@@ -5,3 +5,4 @@ namespace: kube-system
 resources:
 - k3s-traefik-config.yaml
 - traefik-gtw.yaml
+- certificate-traefik-gtw.yaml
