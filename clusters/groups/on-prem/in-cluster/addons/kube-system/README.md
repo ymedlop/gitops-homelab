@@ -4,8 +4,7 @@ Gateway API is a family of Kubernetes resources that provide dynamic infrastruct
 
 K3s comes with Traefik v3, which includes optional support for the Gateway API. In order to enable Gateway API support, deploy a HelmChartConfig that sets providers.kubernetesGateway.enabled to true.
 
-# /var/lib/rancher/k3s/server/manifests/k3s-traefik-config.yaml
----
+```
 apiVersion: helm.cattle.io/v1
 kind: HelmChartConfig
 metadata:
@@ -16,3 +15,4 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
+```
