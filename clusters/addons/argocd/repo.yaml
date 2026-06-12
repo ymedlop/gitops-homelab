@@ -11,4 +11,4 @@ type: Opaque
 stringData:
   project: addons
   type: git
-  url: https://github.com/ymedlop/argocd-clusters-management.git
+  url: https://github.com/ymedlop/gitops-homelab.git
