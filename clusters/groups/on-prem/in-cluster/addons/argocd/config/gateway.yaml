@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   parentRefs:
-  - name: cluster-gateway
-    namespace: gateway
+  - name: traefik-gateway
+    namespace: kube-system
     sectionName: https
   hostnames:
   - argocd.homelab.local
@@ -26,8 +26,8 @@ metadata:
   namespace: argocd
 spec:
   parentRefs:
-  - name: cluster-gateway
-    namespace: gateway
+  - name: traefik-gateway
+    namespace: kube-system
     sectionName: https
   hostnames:
   - grpc.argocd.homelab.local
