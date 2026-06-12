@@ -20,7 +20,7 @@ spec:
     name: web
     port: 8000
     protocol: HTTP
-  - name: argocdwebsecure
+  - name: websecure
     port: 443
     protocol: HTTPS
     allowedRoutes:
@@ -29,6 +29,6 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: argocd-gtw-tls
+      - name: traefik-gtw-tls
         kind: Secret
         group: ""
