@@ -7,7 +7,7 @@ spec:
   parentRefs:
   - name: traefik-gateway
     namespace: kube-system
-    sectionName: websecure
+    sectionName: web
   hostnames:
   - argocd.homelab.local
   rules:
@@ -28,7 +28,7 @@ spec:
   parentRefs:
   - name: traefik-gateway
     namespace: kube-system
-    sectionName: websecure
+    sectionName: web
   hostnames:
   - grpc.argocd.homelab.local
   rules:
