@@ -19,6 +19,8 @@ helmCharts:
   includeCRDs: true
   valuesMerge: merge
   valuesInline:
+    nodeSelector:
+      kubernetes.io/hostname: k3s-gengar
     configs:
       server:
        insecure: true
