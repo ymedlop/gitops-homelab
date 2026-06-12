@@ -6,7 +6,7 @@ metadata:
 spec:
   project: addons
   source:
-    repoURL: https://github.com/ymedlop/argocd-clusters-management.git
+    repoURL: https://github.com/ymedlop/gitops-homelab.git
     targetRevision: HEAD
     path: clusters/groups/on-prem/in-cluster/addons/argocd/config
   destination:
