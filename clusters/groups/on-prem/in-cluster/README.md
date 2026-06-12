@@ -2,7 +2,7 @@
 
 Kubernetes Bare metal Cluster created using the following [manual](https://askcloudarchitech.com/posts/tutorials/create-kubernetes-cluster-from-old-computers/).
 
-## First Node - k8s0cicd01
+## Control Plane - k3s-gengar
 
 Old Mac Mini Mid 2010 running Ubuntu Server and Microk8s.
 
