@@ -54,7 +54,17 @@ alertmanager:
   enabled: true
   service:
     type: ClusterIP
+    
   alertmanagerSpec:
+    volumes:
+      - name: alertmanager-config
+        secret:
+          secretName: alertmanager-config
+    volumeMounts:
+      - name: alertmanager-config
+        mountPath: /etc/alertmanager
+        readOnly: true
+    configSecret: alertmanager-config
     nodeSelector:
       kubernetes.io/hostname: k3s-gengar
     storage:
