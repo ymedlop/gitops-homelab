@@ -1,25 +1,3 @@
----
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: grafana-http-route
-  namespace: monitoring
-spec:
-  parentRefs:
-    - name: traefik-gateway
-      namespace: kube-system
-      sectionName: web
-  hostnames:
-    - grafana.homelab.local
-  rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
-        - name: kube-prometheus-stack-grafana
-          port: 80
----
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -38,7 +16,7 @@ spec:
             type: PathPrefix
             value: /
       backendRefs:
-        - name: prometheus-kube-prometheus-stack-prometheus
+        - name: kube-prometheus-stack-prometheus
           port: 9090
 ---
 apiVersion: gateway.networking.k8s.io/v1
@@ -59,5 +37,5 @@ spec:
             type: PathPrefix
             value: /
       backendRefs:
-        - name: alertmanager-kube-prometheus-stack-alertmanager
+        - name: kube-prometheus-stack-alertmanager
           port: 9093
