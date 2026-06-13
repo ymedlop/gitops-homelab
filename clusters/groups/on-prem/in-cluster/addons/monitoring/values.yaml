@@ -3,9 +3,10 @@ fullnameOverride: kube-prometheus-stack
 grafana:
   enabled: true
   defaultDashboardsEnabled: true
-  existingSecret: monitoring-grafana
-  userKey: admin-user
-  passwordKey: admin-password
+  admin:
+    existingSecret: monitoring-grafana
+    userKey: admin-user
+    passwordKey: admin-password
   service:
     type: ClusterIP
   persistence:
@@ -14,6 +15,8 @@ grafana:
     accessModes:
       - ReadWriteOnce
     size: 5Gi
+  nodeSelector:
+    kubernetes.io/hostname: k3s-gengar
   resources:
     requests:
       cpu: 100m
@@ -26,6 +29,8 @@ prometheus:
   service:
     type: ClusterIP
   prometheusSpec:
+    nodeSelector:
+      kubernetes.io/hostname: k3s-gengar
     retention: 15d
     storageSpec:
       volumeClaimTemplate:
@@ -49,6 +54,8 @@ alertmanager:
   service:
     type: ClusterIP
   alertmanagerSpec:
+    nodeSelector:
+      kubernetes.io/hostname: k3s-gengar
     storage:
       volumeClaimTemplate:
         spec:
@@ -67,6 +74,8 @@ alertmanager:
         memory: 256Mi
 
 kube-state-metrics:
+  nodeSelector:
+    kubernetes.io/hostname: k3s-gengar
   resources:
     requests:
       cpu: 50m
@@ -85,6 +94,8 @@ prometheus-node-exporter:
       memory: 128Mi
 
 prometheusOperator:
+  nodeSelector:
+    kubernetes.io/hostname: k3s-gengar
   resources:
     requests:
       cpu: 100m
@@ -118,27 +129,4 @@ defaultRules:
     kubePrometheusNodeRecording: true
     kubernetesApps: true
     kubernetesResources: true
-    kubernetesStorage: true
-    kubernetesSystem: true
-    kubeSchedulerAlerting: false
-    kubeSchedulerRecording: false
-    kubeStateMetrics: true
-    network: true
-    node: true
-    nodeExporterAlerting: true
-    nodeExporterRecording: true
-    prometheus: true
-    prometheusOperator: true
-
-coreDns:
-  enabled: true
-kubeApiServer:
-  enabled: true
-kubeControllerManager:
-  enabled: false
-kubeEtcd:
-  enabled: false
-kubeProxy:
-  enabled: false
-kubeScheduler:
-  enabled: false
+    
