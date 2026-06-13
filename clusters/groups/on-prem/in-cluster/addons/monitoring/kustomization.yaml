@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: monitoring
 
 resources:
+- gtw.yaml
 
 helmCharts:
  # https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack
