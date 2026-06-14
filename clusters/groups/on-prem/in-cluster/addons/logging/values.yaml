@@ -2,6 +2,7 @@ deploymentMode: SingleBinary
 
 loki:
   auth_enabled: false
+
   schemaConfig:
     configs:
       - from: "2026-06-14"
@@ -11,15 +12,27 @@ loki:
         index:
           prefix: index_
           period: 24h
+
   commonConfig:
     replication_factor: 1
+
   storage:
     type: filesystem
+    filesystem:
+      chunks_directory: /var/loki/chunks
+      rules_directory: /var/loki/rules
+
+  rulerConfig:
+    storage:
+      type: local
+
   limits_config:
     retention_period: 30d
+
   compactor:
     retention_enabled: true
     retention_delete_delay: 2h
+    delete_request_store: filesystem
 
 singleBinary:
   replicas: 1
@@ -41,7 +54,21 @@ singleBinary:
 
 write:
   replicas: 0
+
 read:
   replicas: 0
+
 backend:
   replicas: 0
+
+chunksCache:
+  enabled: false
+
+resultsCache:
+  enabled: false
+
+gateway:
+  enabled: false
+
+test:
+  enabled: false
