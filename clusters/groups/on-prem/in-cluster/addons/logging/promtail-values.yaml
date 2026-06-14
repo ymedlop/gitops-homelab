@@ -6,30 +6,6 @@ config:
     pipelineStages:
       - cri: {}
 
-defaultVolumes:
-  - name: pods
-    hostPath:
-      path: /var/log/pods
-  - name: containers
-    hostPath:
-      path: /var/log/containers
-
-extraVolumes:
-  - name: pods
-    hostPath:
-      path: /var/log/pods
-  - name: containers
-    hostPath:
-      path: /var/log/containers
-
-extraVolumeMounts:
-  - name: pods
-    mountPath: /var/log/pods
-    readOnly: true
-  - name: containers
-    mountPath: /var/log/containers
-    readOnly: true
-
 daemonset:
   enabled: true
 
