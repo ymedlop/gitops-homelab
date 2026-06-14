@@ -52,19 +52,24 @@ prometheus:
 
 alertmanager:
   enabled: true
+  config:
+    global:
+      resolve_timeout: 5m
+    route:
+      receiver: "telegram-slack"
+    receivers:
+      - name: "telegram-slack"
+        slack_configs:
+          - api_url_file: /etc/secrets/SLACK_WEBHOOK_URL
+            channel: "#homelab-alerts"
+        # telegram_configs:
+        #   - bot_token: "SUS_BOT_TOKEN"  # Placeholder
+        #     chat_id: -SUS_CHAT_ID
   service:
     type: ClusterIP
-    
   alertmanagerSpec:
-    volumes:
-      - name: alertmanager-config
-        secret:
-          secretName: alertmanager-config
-    volumeMounts:
-      - name: alertmanager-config
-        mountPath: /etc/alertmanager
-        readOnly: true
-    configSecret: alertmanager-config
+    secrets:
+      - alertmanager-secrets
     nodeSelector:
       kubernetes.io/hostname: k3s-gengar
     storage:
