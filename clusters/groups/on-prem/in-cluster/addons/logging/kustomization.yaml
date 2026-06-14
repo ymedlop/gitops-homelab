@@ -3,12 +3,18 @@ kind: Kustomization
 
 namespace: logging
 
-resources:
-
 helmCharts:
+# https://artifacthub.io/packages/helm/grafana/loki∫
   - name: loki
     repo: https://grafana.github.io/helm-charts
     version: 7.0.0
     releaseName: loki
     namespace: logging
     valuesFile: values.yaml
+# https://artifacthub.io/packages/helm/grafana/promtail
+  - name: promtail
+    repo: https://grafana.github.io/helm-charts
+    version: 6.17.1
+    releaseName: promtail
+    namespace: logging
+    valuesFile: promtail-values.yaml

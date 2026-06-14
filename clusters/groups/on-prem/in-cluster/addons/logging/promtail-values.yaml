@@ -1,0 +1,37 @@
+config:
+  clients:
+    - url: http://loki.logging.svc.cluster.local:3100/loki/api/v1/push
+
+  snippets:
+    pipelineStages:
+      - cri: {}
+
+defaultVolumes:
+  - name: pods
+    hostPath:
+      path: /var/log/pods
+  - name: containers
+    hostPath:
+      path: /var/log/containers
+
+extraVolumes:
+  - name: pods
+    hostPath:
+      path: /var/log/pods
+  - name: containers
+    hostPath:
+      path: /var/log/containers
+
+extraVolumeMounts:
+  - name: pods
+    mountPath: /var/log/pods
+    readOnly: true
+  - name: containers
+    mountPath: /var/log/containers
+    readOnly: true
+
+daemonset:
+  enabled: true
+
+serviceMonitor:
+  enabled: false
