@@ -55,8 +55,7 @@ alertmanager:
   service:
     type: ClusterIP
   alertmanagerSpec:
-    secrets:
-      - alertmanager-secret
+    configSecret: alertmanager-secret
     nodeSelector:
       kubernetes.io/hostname: k3s-gengar
     storage:
