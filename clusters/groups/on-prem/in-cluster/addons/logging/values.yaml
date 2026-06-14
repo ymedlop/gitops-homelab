@@ -30,8 +30,11 @@ loki:
     retention_period: 30d
 
   compactor:
+    working_directory: /var/loki/compactor
+    compaction_interval: 10m
     retention_enabled: true
     retention_delete_delay: 2h
+    retention_delete_worker_count: 150
     delete_request_store: filesystem
 
 singleBinary:
@@ -54,21 +57,16 @@ singleBinary:
 
 write:
   replicas: 0
-
 read:
   replicas: 0
-
 backend:
   replicas: 0
 
 chunksCache:
   enabled: false
-
 resultsCache:
   enabled: false
-
 gateway:
   enabled: false
-
 test:
   enabled: false
