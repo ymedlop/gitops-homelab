@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: logging
 
 resources:
+- gtw.yaml
 
 helmCharts:
   - name: loki
